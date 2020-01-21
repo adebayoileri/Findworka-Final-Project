@@ -17,6 +17,9 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->boolean('suspend')->default(false);
+            $table->integer('privilege_id')->unsigned()->default(1);
+            $table->foreign('privilege_id')->references('id')->on('privileges')->onDelete('cascade')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
