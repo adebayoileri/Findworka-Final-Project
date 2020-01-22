@@ -23,3 +23,4 @@ Route::get('/about', 'Pagescontroller@about');
 Route::get('/contact', 'Pagescontroller@contact');
 Route::get('/privacy-policy', 'Pagescontroller@policy');
 Route::get('/terms', 'Pagescontroller@terms');
+Route::resource('admin','AdminController');
