@@ -24,3 +24,6 @@ Route::get('/contact', 'Pagescontroller@contact');
 Route::get('/privacy-policy', 'Pagescontroller@policy');
 Route::get('/terms', 'Pagescontroller@terms');
 Route::resource('admin','AdminController');
+Route::resource('program','ProgramController');
+Route::resource('privilege', 'PrivilegeController');
+Route::resource('payment_status', 'PaymentStatusController');
