@@ -28,7 +28,31 @@
                                     <th></th>
                                     <th>Access all available programs</th>
                                     <th></th>
-                                    <th><a href="/program" class="btn btn-default">Program Url</a></th>
+                                    <th><a href="/program" class="btn btn-primary">Program Url</a></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                <th> /course </th>
+                                    <th></th>
+                                    <th>Access all available courses</th>
+                                    <th></th>
+                                <th><a href="/admin" class="btn btn-primary">Course Url</a></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th> /privileges</th>
+                                    <th></th>
+                                    <th>Access all available privileges</th>
+                                    <th></th>
+                                    <th><a href="/privilege" class="btn btn-primary">Privilege Url</a></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th> /payment_statuses</th>
+                                    <th></th>
+                                    <th>Access all available programs</th>
+                                    <th></th>
+                                    <th><a href="/payment_status" class="btn btn-primary">Users Payment Status Url</a></th>
                                     <th></th>
                                 </tr>
                         </table>
