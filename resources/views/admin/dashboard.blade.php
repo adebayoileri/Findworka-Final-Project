@@ -50,7 +50,7 @@
                                 <tr>
                                     <th> /payment_statuses</th>
                                     <th></th>
-                                    <th>Access all available programs</th>
+                                    <th>Access all users payment_statuses</th>
                                     <th></th>
                                     <th><a href="/payment_status" class="btn btn-primary">Users Payment Status Url</a></th>
                                     <th></th>
