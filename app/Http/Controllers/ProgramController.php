@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\payment_status;
+use App\program;
 use Illuminate\Http\Request;
 
-class payment_statusController extends Controller
+class ProgramController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class payment_statusController extends Controller
     public function index()
     {
         //
-        $payment_statuses = payment_status::all();
-        return view('payment_statuses.index')->with('payment_statuses', $payment_statuses);
+        $programs = program::all();
+        return view('programs.index')->with('programs', $programs);
     }
 
     /**
@@ -27,7 +27,7 @@ class payment_statusController extends Controller
     public function create()
     {
         //
-        return view('payment_statuses.create');
+        return view('programs.create');
     }
 
     /**
@@ -42,14 +42,21 @@ class payment_statusController extends Controller
          //
          $this->validate($request,[
             'name' => 'required',
+            'description' => 'required',
+            'duration' => 'required',
+            'price' => 'required',
+
         ]);
 
         //Create new post
-            $payment_status = new payment_status;
-            $payment_status->name = $request->input('name');
-            $payment_status->save();
+            $programs = new program;
+            $programs->name = $request->input('name');
+            $programs->description = $request->input('description');
+            $programs->duration = $request->input('duration');
+            $programs->price = $request->input('price');
+            $programs->save();
 
-            return redirect('/payment_status')->with('success','payment_status created');
+            return redirect('/programs')->with('success','Programs created');
     }
 
     /**
@@ -61,8 +68,8 @@ class payment_statusController extends Controller
     public function show($id)
     {
         //
-        $payment_status = payment_status::find($id);
-        return view('payment_statuss.show')->with('payment_status', $payment_status);
+        $programs = program::find($id);
+        return view('programs.show')->with('programs', $programs);
 
     }
 
@@ -75,8 +82,8 @@ class payment_statusController extends Controller
     public function edit($id)
     {
         //
-        $payment_status = payment_status::find($id);
-        return view('payment_statuss.edit')->with('payment_status', $payment_status);
+        $programs = program::find($id);
+        return view('programs.edit')->with('programs', $programs);
     }
 
     /**
@@ -89,15 +96,22 @@ class payment_statusController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'name' => 'required',
+           ' name' => 'required',
+            'description' => 'required',
+            'duration' => 'required',
+            'price' => 'required',
         ]);
 
         //Create new post
-            $payment_status = payment_status::find($id);
-            $payment_status->name = $request->input('name');
-            $payment_status->save();
+            $programs = program::find($id);
+            $programs->name = $request->input('name');
+            $programs->description = $request->input('description');
+            $programs->duration = $request->input('duration');
+            $programs->price = $request->input('price');
 
-            return redirect('/payment_status')->with('success', 'payment_status successfully updated');
+            $programs->save();
+
+            return redirect('/program')->with('success', 'programs successfully updated');
     }
 
     /**
@@ -109,8 +123,8 @@ class payment_statusController extends Controller
     public function destroy($id)
     {
         //
-        $payment_status = payment_status::find($id);
-        $payment_status->delete();
-        return redirect('/payment_status')->with('success', 'payment_status successfully deleted');
+        $programs = program::find($id);
+        $programs->delete();
+        return redirect('/program')->with('success', 'programs successfully deleted');
     }
 }
