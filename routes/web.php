@@ -27,4 +27,9 @@ Route::resource('admin','AdminController');
 Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
-Route::get('/admin-dashboard', 'AdminDashboardController@dashboard');
+
+//Admin Routes
+
+    Route::get('new-admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('new-admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');;
+    Route::get('/admin-dashboard', 'AdminDashboardController@dashboard');
