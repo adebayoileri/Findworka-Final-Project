@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\course;
-use App\program;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
-{
+use App\payment_status;
 
+class PaymentStatusController extends Controller
+{
     public function __construct()
     {
         $this->middleware('auth:admin');
@@ -21,9 +20,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //return all courses in database
-        $courses = course::all();
-        return view('admin.index')->with('courses', $courses);
+        //
+        $payment_statuses = payment_status::all();
+        return view('payment_statuses.index')->with('payment_statuses', $payment_statuses);
+
     }
 
     /**
@@ -34,8 +34,8 @@ class AdminController extends Controller
     public function create()
     {
         //
-        $programs = program::all();
-        return view('admin.create')->with('programs', $programs);
+        return view('payment_statuses.create');
+        
     }
 
     /**
@@ -48,21 +48,16 @@ class AdminController extends Controller
     {
         //
         $this->validate($request,[
-            'description' => 'required',
+            
             'name' => 'required',
-            'content' => 'required',
-            'program'=>'required'
         ]);
 
         //Create new post
-            $course = new course;
-            $course->description = $request->input('description');
-            $course->name =   $request->input('name');
-            $course->content = $request->input('content');
-            $course->program_id = $request->input('program');
-            $course->save();
+            $payment_statuses= new payment_status;
+            $payment_statuses->name = $request->input('name');
+            $payment_statuses->save();
 
-            return redirect('/admin')->with('success','course created');
+            return redirect('/payment_statuses')->with('success','payment_statuses created');
     }
 
     /**
@@ -73,8 +68,10 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $course = course::find($id);
-        return view('admin.show')->with('course', $course);
+        //
+        $payment_statuses = payment_status::find($id);
+        return view('payment_statuses.show')->with('payment_statuses', $payment_statuses);
+
     }
 
     /**
@@ -86,9 +83,8 @@ class AdminController extends Controller
     public function edit($id)
     {
         //
-        $programs = program::all();
-        $course = course::find($id);
-        return view('admin.edit')->with('programs', $programs)->with('course', $course);
+        $payment_statuses = payment_status::find($id);
+        return view('payment_statuses.edit')->with('payment_statuses', $payment_statuses);
 
     }
 
@@ -101,22 +97,19 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //
         $this->validate($request,[
             'name' => 'required',
-            'description' => 'required',
-            'program' =>'required',
-            'content'=>'required'
         ]);
 
         //Create new post
-            $course = course::find($id);
-            $course->name = $request->input('name');
-            $course->description = $request->input('description');
-            $course->content = $request->input('content');
-            $course->program_id = $request->input('program');
-            $course->save();
+            $payment_statuses = payment_status::find($id);
+            $payment_statuses->name = $request->input('name');
+           
 
-            return redirect('/admin')->with('success', 'Course successfully updated');
+            return redirect('/payment_statuses')->with('success', ' Payment status successfully updated');
+
+
     }
 
     /**
@@ -127,8 +120,9 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $course = course::find($id);
-        $course->delete();
-        return redirect('/admin')->with('success', 'Course successfully deleted');
+        //
+        $payment_statuses = payment_status::find($id);
+        $payment_statuses->delete();
+        return redirect('/payment_statuses')->with('success', 'Payment status successfully deleted');
     }
 }

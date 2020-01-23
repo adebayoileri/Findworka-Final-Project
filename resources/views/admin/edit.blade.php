@@ -16,10 +16,12 @@
     {{Form::textarea('content', $course->content, ['class' =>'form-control', 'placeholder' => "Course Content"])}}
 </div>
 <div class="form-group">
-    {{Form::label('program', 'Pick a program')}}
+<label for="program">Pick a Program</label>
+<select class="form-control">
     @foreach ($programs as $program)
+<option value="{{$program->id}}">{{$program->name}}</option>
     @endforeach
-    {{Form::select('program', [ $program->id => $program->description, $program->id => $program->description, $program->id => $program->description], null, ['class' =>'form-control'])}}
+</select>
 </div>
 {{Form::hidden('_method', 'PUT')}}
 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}

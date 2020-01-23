@@ -24,3 +24,12 @@ Route::get('/contact', 'Pagescontroller@contact');
 Route::get('/privacy-policy', 'Pagescontroller@policy');
 Route::get('/terms', 'Pagescontroller@terms');
 Route::resource('admin','AdminController');
+Route::resource('program','ProgramController');
+Route::resource('privilege', 'PrivilegeController');
+Route::resource('payment_status', 'PaymentStatusController');
+
+//Admin Routes
+
+    Route::get('new-admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('new-admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');;
+    Route::get('/admin-dashboard', 'AdminDashboardController@dashboard');
