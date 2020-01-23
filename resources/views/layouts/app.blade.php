@@ -31,6 +31,7 @@
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  margin-bottom: 0;
 }
 </style>
 <body>
@@ -116,17 +117,17 @@ footer.footer {
                   <ul class="list-inline mb-0">
                     <li class="list-inline-item mr-3">
                       <a href="#">
-                        <i class="fab fa-facebook fa-2x fa-fw"></i>
+                        <i class="fa fa-facebook fa-2x fa-fw"></i>
                       </a>
                     </li>
                     <li class="list-inline-item mr-3">
                       <a href="#">
-                        <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                        <i class="fa fa-twitter-square fa-2x fa-fw"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
                       <a href="#">
-                        <i class="fab fa-instagram fa-2x fa-fw"></i>
+                        <i class="fa fa-instagram fa-2x fa-fw"></i>
                       </a>
                     </li>
                   </ul>

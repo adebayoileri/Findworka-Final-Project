@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\privilege;
+use App\course;
+use App\program;
 use Illuminate\Http\Request;
 
-class PrivilegeController extends Controller
+class AdminController extends Controller
 {
 
     public function __construct()
@@ -20,9 +21,9 @@ class PrivilegeController extends Controller
      */
     public function index()
     {
-        //
-        $privileges = privilege::all();
-        return view('privilege.index')->with('privileges', $privileges);
+        //return all courses in database
+        $courses = course::all();
+        return view('admin.index')->with('courses', $courses);
     }
 
     /**
@@ -33,7 +34,8 @@ class PrivilegeController extends Controller
     public function create()
     {
         //
-        return view('privilege.create');
+        $programs = program::all();
+        return view('admin.create')->with('programs', $programs);
     }
 
     /**
@@ -46,16 +48,21 @@ class PrivilegeController extends Controller
     {
         //
         $this->validate($request,[
-            
+            'description' => 'required',
             'name' => 'required',
+            'content' => 'required',
+            'program'=>'required'
         ]);
 
         //Create new post
-            $privileges= new privilege;
-            $privileges->name = $request->input('name');
-            $privileges->save();
+            $course = new course;
+            $course->description = $request->input('description');
+            $course->name =   $request->input('name');
+            $course->content = $request->input('content');
+            $course->program_id = $request->input('program');
+            $course->save();
 
-            return redirect('/privilege')->with('success','privileges created');
+            return redirect('/admin')->with('success','course created');
     }
 
     /**
@@ -66,9 +73,8 @@ class PrivilegeController extends Controller
      */
     public function show($id)
     {
-        //
-        $privileges = privilege::find($id);
-        return view('privilege.show')->with('privileges', $privileges);
+        $course = course::find($id);
+        return view('admin.show')->with('course', $course);
     }
 
     /**
@@ -80,8 +86,10 @@ class PrivilegeController extends Controller
     public function edit($id)
     {
         //
-        $privileges = privilege::find($id);
-        return view('privilege.edit')->with('privileges', $privileges);
+        $programs = program::all();
+        $course = course::find($id);
+        return view('admin.edit')->with('programs', $programs)->with('course', $course);
+
     }
 
     /**
@@ -93,17 +101,22 @@ class PrivilegeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $this->validate($request,[
             'name' => 'required',
+            'description' => 'required',
+            'program' =>'required',
+            'content'=>'required'
         ]);
 
         //Create new post
-            $privileges = privilege::find($id);
-            $privileges->name = $request->input('name');
-           
+            $course = course::find($id);
+            $course->name = $request->input('name');
+            $course->description = $request->input('description');
+            $course->content = $request->input('content');
+            $course->program_id = $request->input('program');
+            $course->save();
 
-            return redirect('/privilege')->with('success', 'Privileges successfully updated');
+            return redirect('/admin')->with('success', 'Course successfully updated');
     }
 
     /**
@@ -114,9 +127,8 @@ class PrivilegeController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $privileges = privilege::find($id);
-        $privileges->delete();
-        return redirect('/privilege')->with('success', 'Privileges successfully deleted');
+        $course = course::find($id);
+        $course->delete();
+        return redirect('/admin')->with('success', 'Course successfully deleted');
     }
 }
