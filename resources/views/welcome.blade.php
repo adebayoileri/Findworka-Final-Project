@@ -1,7 +1,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="View Courseport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,8 +17,7 @@
   <link rel="stylesheet" href="css/font-awesome.min.css">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -125,7 +124,104 @@ footer.footer {
     </div>
     <!-- container -->
 </div>
-	
+    
+  {{-- test --}}
+  <div class="container">
+    <div class="section-header">
+        <h2>Have access to our courses</h2>
+        <p>Jump Right Back Into Learning</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Introduction to PHP Laravel</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+              </div>
+              <small class="text-muted">65 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Introduction to PHP Laravel</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+              </div>
+              <small class="text-muted">32 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Introduction to PHP Laravel</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+              </div>
+              <small class="text-muted">45 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Introduction to PHP Laravel</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+              </div>
+              <small class="text-muted">64 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Introduction to PHP Laravel</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+              </div>
+              <small class="text-muted">90 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Introduction to PHP Laravel</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" href="#"class="btn btn-sm btn-outline-secondary">View Course</button>
+              </div>
+              <small class="text-muted">58 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{-- test end --}}
+
+
 		<!-- Contact CTA -->
 		<div id="contact-cta" class="section">
 
@@ -141,7 +237,7 @@ footer.footer {
 
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<h2 class="white-text center">Contact Us</h2>
-						<p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+						<p class="lead white-text">Get In Touch With Us.</p>
 						<a class="main-button icon-button" href="/contact">Contact Us Now</a>
 					</div>
 
