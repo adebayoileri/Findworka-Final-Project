@@ -78,7 +78,7 @@ footer.footer {
             <div class="col-md-6">
                 <div class="section-header">
                     <h2>Welcome to Findworka Academy</h2>
-                    <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+                    <p class="lead">Beginnner to Job-Ready</p>
                 </div>
 
                 <!-- feature -->
@@ -86,7 +86,7 @@ footer.footer {
                     <i class="feature-icon fa fa-flask"></i>
                     <div class="feature-content">
                         <h4>Online Courses </h4>
-                        <p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+                        <p>You can learn anywhere - either at our Lagos training centers or from your couch. This means that you can re-learn difficult concepts by watching our materials.</p>
                     </div>
                 </div>
                 <!-- /feature -->
@@ -96,7 +96,7 @@ footer.footer {
                     <i class="feature-icon fa fa-users"></i>
                     <div class="feature-content">
                         <h4>Expert Teachers</h4>
-                        <p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+                        <p>We have world-class facilitators to put learners through the principle of software development</p>
                     </div>
                 </div>
                 <!-- /feature -->
@@ -105,8 +105,8 @@ footer.footer {
                 <div class="feature">
                     <i class="feature-icon fa fa-comments"></i>
                     <div class="feature-content">
-                        <h4>Community</h4>
-                        <p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+                        <h4>Saucecode Community</h4>
+                        <p>Our closely knit circle of techies, staying updated on tech trends and following gig alerts.</p>
                     </div>
                 </div>
                 <!-- /feature -->
@@ -140,7 +140,7 @@ footer.footer {
 				<div class="row">
 
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<h2 class="white-text">Contact Us</h2>
+						<h2 class="white-text center">Contact Us</h2>
 						<p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
 						<a class="main-button icon-button" href="/contact">Contact Us Now</a>
 					</div>
