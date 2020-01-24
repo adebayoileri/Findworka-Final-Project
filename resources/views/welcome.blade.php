@@ -134,7 +134,7 @@ footer.footer {
     <div class="row">
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Introduction to PHP Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -148,7 +148,7 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Introduction to PHP Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -162,7 +162,7 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Introduction to PHP Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -177,7 +177,7 @@ footer.footer {
 
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Introduction to PHP Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -191,7 +191,7 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Introduction to PHP Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -205,7 +205,7 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Introduction to PHP Laravel</p>
             <div class="d-flex justify-content-between align-items-center">
