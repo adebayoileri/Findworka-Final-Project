@@ -14,6 +14,7 @@
     
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -51,7 +52,7 @@ footer.footer {
 <div id="home" class="hero-area">
 
     <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url(./img/home-background.jpg)"></div>
+    <div class="bg-image bg-parallax overlay" style="background-image:url('https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png')"></div>
     <!-- /Backgound Image -->
 
     <div class="home-wrapper">
@@ -60,12 +61,99 @@ footer.footer {
                 <div class="col-md-8">
                     <h1 class="white-text">Findworka Academy Online Training Courses</h1>
                     <p class="lead white-text">Findworka Academy is equipping African youths with the most on-demand technology skills</p>
-                    <a class="main-button icon-button" href="#">Get Started!</a>
+                    <a class="main-button icon-button" href="/register">Get Started!</a>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+<div id="about" class="section">
+
+    <!-- container -->
+    <div class="container">
+
+        <!-- row -->
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="section-header">
+                    <h2>Welcome to Findworka Academy</h2>
+                    <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+                </div>
+
+                <!-- feature -->
+                <div class="feature">
+                    <i class="feature-icon fa fa-flask"></i>
+                    <div class="feature-content">
+                        <h4>Online Courses </h4>
+                        <p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+                    </div>
+                </div>
+                <!-- /feature -->
+
+                <!-- feature -->
+                <div class="feature">
+                    <i class="feature-icon fa fa-users"></i>
+                    <div class="feature-content">
+                        <h4>Expert Teachers</h4>
+                        <p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+                    </div>
+                </div>
+                <!-- /feature -->
+
+                <!-- feature -->
+                <div class="feature">
+                    <i class="feature-icon fa fa-comments"></i>
+                    <div class="feature-content">
+                        <h4>Community</h4>
+                        <p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
+                    </div>
+                </div>
+                <!-- /feature -->
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="about-img">
+                    <img src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+
+    </div>
+    <!-- container -->
+</div>
+	
+		<!-- Contact CTA -->
+		<div id="contact-cta" class="section">
+
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay" style="background-image:url('https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png')"></div>
+			<!-- Backgound Image -->
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<h2 class="white-text">Contact Us</h2>
+						<p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+						<a class="main-button icon-button" href="/contact">Contact Us Now</a>
+					</div>
+
+				</div>
+				<!-- /row -->
+
+			</div>
+			<!-- /container -->
+
+		</div>
+		<!-- /Contact CTA -->
+<!-- /About -->
+    @include('inc.footer')
     </body>
 </html>
