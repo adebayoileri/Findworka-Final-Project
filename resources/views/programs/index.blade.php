@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <h1>Available Programs</h1>
 @if(count($programs) > 0)
     @foreach($programs as $program)
@@ -13,5 +12,4 @@
 @else
     <p>No privi found</p>
     @endif
-</div>
 @endsection

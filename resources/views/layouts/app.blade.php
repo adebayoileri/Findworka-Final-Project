@@ -88,7 +88,10 @@ footer.footer {
         </nav>
 
         <main class="py-4">
+          <div class="container">
+            @include('inc.message')
             @yield('content')
+          </div>
         </main>
         <footer class="footer bg-light">
             <div class="container">

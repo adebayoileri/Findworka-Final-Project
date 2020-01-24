@@ -27,7 +27,7 @@ Route::resource('admin','AdminController');
 Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
-
+Route::resource('/user', 'UserController');
 //Admin Routes
 
     Route::get('new-admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

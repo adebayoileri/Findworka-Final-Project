@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     {!! Form::open(['action'=>'ProgramController@store', 'method' => 'POST']) !!}
 <div class="form-group">
     {{Form::label('name',  'Program Name')}}
@@ -23,5 +22,4 @@
 
 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
 {!! Form::close() !!}
-</div>
 @endsection
