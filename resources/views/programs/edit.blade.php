@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <h1>Edit Post</h1>
         {!! Form::open(['action'=>['ProgramController@update', $program->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -24,5 +23,4 @@
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
-    </div>
 @endsection

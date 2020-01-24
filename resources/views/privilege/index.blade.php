@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <h1>Available Programs</h1>
 @if(count($privileges) > 0)
     @foreach($privileges as $privilege)
@@ -13,5 +12,4 @@
 @else
     <p>No privileges found</p>
     @endif
-</div>
 @endsection

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     {!! Form::open(['action'=>'AdminController@store', 'method' => 'POST']) !!}
 <div class="form-group">
     {{Form::label('name',  'Course Name')}}
@@ -26,5 +25,4 @@
 
 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
 {!! Form::close() !!}
-</div>
 @endsection
