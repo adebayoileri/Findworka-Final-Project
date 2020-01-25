@@ -61,7 +61,7 @@ class ProgramController extends Controller
             $programs->price = $request->input('price');
             $programs->save();
 
-            return redirect('/programs')->with('success','Programs created');
+            return redirect('/program')->with('success','New Program created');
     }
 
     /**

@@ -9,7 +9,8 @@
             <p>{{$program->body}}</p>
         </div>
     @endforeach
+    <a  role="button" href='/program/create' class="btn btn-primary">Create Program</a>
 @else
-    <p>No privi found</p>
+    <p>No programs found</p>
     @endif
 @endsection

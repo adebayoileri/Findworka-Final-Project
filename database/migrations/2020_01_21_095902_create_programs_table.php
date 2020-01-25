@@ -15,11 +15,12 @@ class CreateProgramsTable extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->string('duration');
             $table->string('price');
             $table->string('description');
-            $table->integer('payment_status_id')->unsigned();
-            $table->foreign('payment_status_id')->references('id')->on('payment_statuses');
+            // $table->integer('payment_status_id')->unsigned();
+            // $table->foreign('payment_status_id')->references('id')->on('payment_statuses');
             $table->timestamps();
         });
     }
