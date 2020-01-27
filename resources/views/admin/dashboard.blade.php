@@ -97,6 +97,8 @@
                 {{ session('status') }}
             </div>
         @endif
+            </li>
+            </div>
         <div class="panel-body">
             <h3>All Admin Endpoints</h3>
             <table class="table table-striped">
