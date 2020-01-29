@@ -134,12 +134,12 @@ footer.footer {
     <div class="row">
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">Introduction to PHP Laravel</p>
+            <p class="card-text">Web Development</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+                <button type="button" role="link" class="btn btn-sm btn-outline-secondary"><a href="{{url('/webdevelopment')}}">View Course</a></button>
               </div>
               <small class="text-muted">65 mins</small>
             </div>
@@ -148,12 +148,12 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">Introduction to PHP Laravel</p>
+            <p class="card-text">UI/UX Design</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{url('/uiux')}}">View Course</a></button>
               </div>
               <small class="text-muted">32 mins</small>
             </div>
@@ -162,12 +162,12 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">Introduction to PHP Laravel</p>
+            <p class="card-text">Data Science</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{url('/datascience')}}">View Course</a></button>
               </div>
               <small class="text-muted">45 mins</small>
             </div>
@@ -177,42 +177,14 @@ footer.footer {
 
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
+          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">Introduction to PHP Laravel</p>
+            <p class="card-text">Mobile App Development</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{url('/mobileappdevelopment')}}">View Course</a></button>
               </div>
               <small class="text-muted">64 mins</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Introduction to PHP Laravel</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View Course</button>
-              </div>
-              <small class="text-muted">90 mins</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Introduction to PHP Laravel</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" href="#"class="btn btn-sm btn-outline-secondary">View Course</button>
-              </div>
-              <small class="text-muted">58 mins</small>
             </div>
           </div>
         </div>
