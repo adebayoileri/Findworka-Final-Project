@@ -18,4 +18,16 @@ class PagesController extends Controller
     public function terms(){
         return view('pages.terms');
     }
+    public function web(){
+        return view('pages.webdev');
+    }
+    public function uiux(){
+        return view('pages.uiux');
+    }
+    public function datascience(){
+        return view('pages.datascience');
+    }
+    public function mobile(){
+        return view('pages.mobile');
+    }
 }

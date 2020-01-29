@@ -18,7 +18,7 @@
 <label for="program">Pick a Program</label>
 <select class="form-control">
     @foreach ($programs as $program)
-<option value="{{$program->id}}">{{$program->name}}</option>
+<option name="program" value="{{$program->id}}">{{$program->name}}</option>
     @endforeach
 </select>
 </div>
