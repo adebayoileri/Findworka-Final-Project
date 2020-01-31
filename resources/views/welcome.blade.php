@@ -51,7 +51,7 @@ footer.footer {
 <div id="home" class="hero-area">
 
     <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url('https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png')"></div>
+    <div class="bg-image bg-parallax overlay" style="background-image:url('https://res.cloudinary.com/adebayo/image/upload/v1580469085/6BF55C51-7431-4926-9A28-435C9FDA623D_zgzdsh.jpg')"></div>
     <!-- /Backgound Image -->
 
     <div class="home-wrapper">
@@ -148,7 +148,7 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
+          <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXWnRo85gxyL1QiiQWjO1uRsJ2yBjL2gB_iAqowL8y85ai34MJ" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">UI/UX Design</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -162,7 +162,7 @@ footer.footer {
       </div>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
+          <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQu-9zFVTmRhrK2NqIA8pP62orN1cy4M3hPong5AQvisAqbTVsy" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Data Science</p>
             <div class="d-flex justify-content-between align-items-center">
@@ -177,7 +177,7 @@ footer.footer {
 
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" alt="Card image cap">
+          <img class="card-img-top" src="https://blog.codemagic.io/uploads/CM_Android-dev-Flutter.9c02e273ebcd875d17b80037b2147c68cc0f5055dd3f1b9d663ebedec3d66ba7.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Mobile App Development</p>
             <div class="d-flex justify-content-between align-items-center">
