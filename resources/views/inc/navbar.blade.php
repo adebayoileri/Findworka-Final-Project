@@ -17,10 +17,10 @@
                   <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Courses</a>
+                  <a class="nav-link" href="#courses">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Categories</a>
+                  <a class="nav-link" href="#">Teach At Findworka</a>
                 </li>
               </ul>
 

@@ -127,7 +127,7 @@ footer.footer {
     
   {{-- test --}}
   <div class="container">
-    <div class="section-header">
+    <div id="courses" class="section-header">
         <h2>Have access to our courses</h2>
         <p>Jump Right Back Into Learning</p>
     </div>
