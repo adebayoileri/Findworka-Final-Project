@@ -27,6 +27,7 @@ Route::get('/webdevelopment', 'Pagescontroller@web');
 Route::get('/datascience', 'Pagescontroller@datascience');
 Route::get('/uiux', 'Pagescontroller@uiux');
 Route::get('/mobileappdevelopment', 'Pagescontroller@mobile');
+Route::resource('profile', 'ProfileController');
 Route::resource('admin','AdminController');
 Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');

@@ -22,7 +22,7 @@
                     User Profile
                 </div>
                 <div class="card-body">
-                    <button class="btn-primary">Edit Profile</button>
+                 <a role="button" class="btn btn-primary" href="profile/{{Auth::user()->id}}/edit">Edit Profile</a>
                 </div>
             </div>
         </div>

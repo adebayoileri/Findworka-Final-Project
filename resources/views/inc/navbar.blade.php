@@ -46,7 +46,7 @@
                             <a class="dropdown-item dropdown-menu-right">My Courses </a>
                             <a class="dropdown-item dropdown-menu-right">Your Wishlist </a>
                             <a href="/home" class="dropdown-item dropdown-menu-right">View Profile</a>
-                            <a class="dropdown-item dropdown-menu-right">Edit Profile</a>
+                            <a href="/profile/{{Auth::user()->id}}/edit" class="dropdown-item dropdown-menu-right">Edit Profile</a>
                             <a class="dropdown-item dropdown-menu-right">Purhase History</a>
                              <a class="dropdown-item dropdown-menu-right">Notifications</a>
                             <a class="dropdown-item dropdown-menu-right">Messages</a>
