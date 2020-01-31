@@ -11,10 +11,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/">Home</a>
+                  <a class="nav-link" href="{{url('/')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/about">About</a>
+                  <a class="nav-link" href="{{url('/about')}}">About</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#courses">Courses</a>
@@ -43,6 +43,13 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item dropdown-menu-right">My Courses </a>
+                            <a class="dropdown-item dropdown-menu-right">Your Wishlist </a>
+                            <a href="/home" class="dropdown-item dropdown-menu-right">View Profile</a>
+                            <a class="dropdown-item dropdown-menu-right">Edit Profile</a>
+                            <a class="dropdown-item dropdown-menu-right">Purhase History</a>
+                             <a class="dropdown-item dropdown-menu-right">Notifications</a>
+                            <a class="dropdown-item dropdown-menu-right">Messages</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
