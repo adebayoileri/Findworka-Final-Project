@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+        @if(Auth::user()->id == $user->id)
     <h1>Edit User Profile</h1>
         {!! Form::open(['action'=>['ProfileController@update', $user->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -20,4 +21,7 @@
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Update Profile', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
+    @else
+        <h1>Error 401 | You are not authorized to view this page</h1>
+    @endif
 @endsection
