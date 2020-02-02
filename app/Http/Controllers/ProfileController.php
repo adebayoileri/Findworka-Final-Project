@@ -59,9 +59,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($name)
     {
-        $user = User::find($id);
+        $user = User::find($name);
         return view('profile.edit')->with('user', $user);
     }
 
@@ -72,7 +72,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $name)
     {
         //
         $this->validate($request,[
@@ -82,14 +82,14 @@ class ProfileController extends Controller
         ]);
 
         //Create new post
-            $user = User::find($id);
+            $user = User::find($name);
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->password = $request->input('password');
 
             $user->save();
 
-            return redirect('/home')->with('success', 'User successfully updated');
+            return redirect('/home')->with('success', 'User Profile successfully updated');
     }
 
     /**
