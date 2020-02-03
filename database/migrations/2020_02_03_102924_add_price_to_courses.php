@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPaymentStatusIdToCourses extends Migration
+class AddPriceToCourses extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class AddPaymentStatusIdToCourses extends Migration
      */
     public function up()
     {
-        // Schema::table('courses', function (Blueprint $table) {
-        //     $table->integer('payment_status_id')->unsigned()->default(3);
-        //     $table->foreign('payment_status_id')->references('id')->on('payment_statuses')->onDelete('cascade');
-        // });
+        Schema::table('courses', function (Blueprint $table) {
+            $table->integer('price');
+        });
     }
 
     /**
@@ -27,7 +26,7 @@ class AddPaymentStatusIdToCourses extends Migration
     public function down()
     {
         Schema::table('courses', function (Blueprint $table) {
-            //
+            $table->dropColumn('courses');
         });
     }
 }
