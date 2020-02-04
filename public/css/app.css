@@ -11328,6 +11328,10 @@ a.text-dark:focus {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
