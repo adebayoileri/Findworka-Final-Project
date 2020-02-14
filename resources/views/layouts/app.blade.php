@@ -15,6 +15,8 @@
     
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  {{-- favicon --}}
+  <link rel="icon" type="image/png" href="https://www.findworka.com/static/favicon.png">
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
