@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\course;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -90,6 +91,10 @@ class ProfileController extends Controller
             $user->save();
 
             return redirect('/home')->with('success', 'User Profile successfully updated');
+    }
+    public function apply($id){
+        $course = course::find($id);
+        return view('programs.apply')->with('course', $course);
     }
 
     /**

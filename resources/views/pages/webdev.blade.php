@@ -30,7 +30,7 @@
                         <li> Git and Commandline</li>
                         <li>Finally Build a complete website</li>
                     </ul>
-                        <a role="button" class="btn btn-primary" href="">Apply Now</a>
+                        <a role="button" class="main-button icon-button" href="">Apply Now</a>
                         <p></p>
                         <h4>Back End Development</h4>
                         <ol>
@@ -40,7 +40,7 @@
                         <li> Object Oriented Programming (OOP)</li>
                         <li> Introduction to Node JS</li>
                         <li> Data Structure and Algorithms</li>
-                        <li> Git and Commandline</li>
+                        <li> Git and CommandLine</li>
                         <li>Finally Build a complete website</li>
                         </ol>
                         <a role="button" class="main-button icon-button" href="">Apply Now</a>
