@@ -34,6 +34,8 @@ Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
 Route::resource('/user', 'UserController');
 Route::get('/apply/{id}', 'ProfileController@apply');
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 //Admin Routes
 
     Route::get('new-admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
