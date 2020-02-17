@@ -4,11 +4,11 @@
 <div class="hero-area section">
 
     <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url('https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png')"></div>
+    <div class="bg-image bg-parallax overlay" style="background-image:url('https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png')"></div>
     <!-- /Backgound Image -->
 <div class="row">
     <div class="col-md-10 col-md-offset-1 text-center">
-        <h1 class="white-text">Web Development</h1>
+        <h1 class="white-text">Web Development</h1> 
 
     </div>
 </div>

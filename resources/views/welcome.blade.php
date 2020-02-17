@@ -116,7 +116,7 @@ footer.footer {
 
             <div class="col-md-6">
                 <div class="about-img">
-                    <img src="https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png" alt="">
+                    <img src="https://pbs.twimg.com/media/EQ-EiIpXsAA8y8p?format=jpg&name=small" alt="">
                 </div>
             </div>
 
