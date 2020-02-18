@@ -56,8 +56,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-                                <a class="btn btn-primary" role="button" href="{{ url('/login/facebook') }}"><i class="fa fa-facebook fa-2x fa-fw"></i>Login with facebook</a>
-
+                            <br>
+                             <br>
+                            <a class="btn btn-primary" role="button" href="{{ url('/login/facebook') }}"><i class="fa fa-facebook fa-2x fa-fw"></i>Login with facebook</a>
+                                <a class="btn btn-danger" href="/">Sign in with google</a>
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
