@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Welcome Back {{ Auth::user()->name }}</div>
+                <div class="card-header">Welcome Back {{ $user->name }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -23,7 +23,7 @@
                 </div>
                 <div class="card-body">
                     @auth
-                    <a role="button" class="btn btn-primary" href="profile/{{Auth::user()->id}}/edit">Edit Profile</a>
+                    {{-- <a role="button" class="btn btn-primary" href="profile/{{user->id}}/edit">Edit Profile</a> --}}
                     @endauth
                 </div>
             </div>

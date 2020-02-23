@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -36,8 +36,8 @@ Route::resource('/user', 'UserController');
 Route::get('/apply/{id}', 'ProfileController@apply');
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
-//Admin Routes
 
+//Admin Routes
     Route::get('new-admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('new-admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');;
     Route::get('/admin-dashboard', 'AdminDashboardController@dashboard');
