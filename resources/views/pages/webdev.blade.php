@@ -30,7 +30,12 @@
                         <li> Git and Commandline</li>
                         <li>Finally Build a complete website</li>
                     </ul>
-                        <a role="button" class="main-button icon-button" href="">Apply Now</a>
+                    @guest
+                    <a role="button" class="main-button icon-button" href="/register">Apply Now</a>
+                    @endguest
+                    @auth
+                    <a role="button" class="main-button icon-button" href="apply/1">Apply Now</a>
+                    @endauth
                         <p></p>
                         <h4>Back End Development</h4>
                         <ol>
@@ -43,7 +48,12 @@
                         <li> Git and CommandLine</li>
                         <li>Finally Build a complete website</li>
                         </ol>
-                        <a role="button" class="main-button icon-button" href="">Apply Now</a>
+                        @guest
+                        <a role="button" class="main-button icon-button" href="/register">Apply Now</a>
+                        @endguest
+                        @auth
+                        <a role="button" class="main-button icon-button" href="apply/2">Apply Now</a>
+                        @endauth
 
                     </div>
             </div>
