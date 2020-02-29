@@ -100,6 +100,33 @@
             </li>
             </div>
         <div class="panel-body">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Welcome Back {{ Auth::user()->name }}</div>
+    
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        My Courses
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        User & Course Management
+                    </div>
+                    <div class="card-body">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
             <h3>All Admin Endpoints</h3>
             <table class="table table-striped">
                 <tr>
