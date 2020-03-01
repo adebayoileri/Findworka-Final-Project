@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserCoursesTable extends Migration
+class AddProfileImageToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class AddUserCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_courses', function (Blueprint $table) {
-            $table->increments('id');                  
-            $table->unsignedInteger('course_id');
-            $table->unsignedInteger('user_id');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('photo')->default('noimage.jpg');
         });
     }
 
@@ -28,6 +25,8 @@ class AddUserCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('user_courses');
+        Schema::table('users', function (Blueprint $table) {
+            // Schema::dropIfExists('users');
+        });
     }
 }

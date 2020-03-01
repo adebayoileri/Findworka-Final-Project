@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class UserController extends Controller
@@ -100,7 +101,7 @@ class UserController extends Controller
              $users = User::find($id);
              $users->name = $request->input('name');
              $users->email = $request->input('email');
-             $users->password = \Hash::make($request->input('password'));
+             $users->password = Hash::make($request['password']);
  
              $users->save();
  

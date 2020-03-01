@@ -13,6 +13,14 @@
                         </div>
                     @endif
                     My Courses
+                    @if ($enrolls->count() > 0)
+                    @foreach ($enrolls as $enroll)
+                        <p>Courses You enrolled for recently</p>
+                        <p>{{$enroll->course_id}}</p> 
+                    @endforeach
+                    @else
+                        <p> You have not enrolled for any course </p>
+                    @endif
                 </div>
             </div>
         </div>

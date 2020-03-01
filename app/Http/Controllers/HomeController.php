@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\user_courses;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $enrolls = auth()->user()->enrolls;
+        // return dd($enrolls);
+        return view('home')->with('enrolls', $enrolls);
     }
 }
