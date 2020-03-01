@@ -8,13 +8,13 @@ class user_courses extends Model
 {
     protected $guarded = [];
 
-    public function course()
-    {
-        return $this->belongsTo(course::class);
-    }
+    // public function courses()
+    // {
+    //     return $this->belongsToMany(course::class);
+    // }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // public function user()
+    // {
+    //     return $this->belongsToMany(User::class);
+    // }
 }

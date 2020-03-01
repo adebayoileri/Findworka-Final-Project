@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
@@ -53,13 +55,14 @@ class LoginController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * Obtain the user information from service provider.
      *
      * @return \Illuminate\Http\Response
      */
     public function handleProviderCallback($service)
     {
         $user = Socialite::driver($service)->user();
+        Auth::login($user);
         $data = [
             'user' => $user,
         ];
