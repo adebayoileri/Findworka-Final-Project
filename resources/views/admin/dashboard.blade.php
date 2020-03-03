@@ -45,6 +45,22 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Admin/Tutor Dashboard</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <span>User Management</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <span>Program/Courses Management</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <span>Payment Information</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <span>Privileges Control</span></a>
+      </li>
 
     </ul>
     <!-- End of Sidebar -->
@@ -111,7 +127,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        My Courses
+                        List Of available courses
                     </div>
                 </div>
             </div>
@@ -126,6 +142,27 @@
                 </div>
             </div>
         </div>
+        <br>
+        <h3>Site Data</h3>
+        <table class="table table-striped">
+          <tr>
+              <th>Name</th>
+              <th>User Type</th>
+              <th>Course Enrolled</th>
+              <th>Payment Status</th>
+          </tr>
+            @foreach ($user as $person)
+            <tr>
+              <th> {{$person->name}}</th>
+              @if($person->privilge_id = 1)
+              <th> Student</th>
+              @else
+                  <th>Tutor</th>
+              @endif
+              <th>paid</th>
+          </tr>
+            @endforeach
+      </table>
         <br>
             <h3>All Admin Endpoints</h3>
             <table class="table table-striped">

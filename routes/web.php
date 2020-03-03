@@ -37,7 +37,7 @@ Route::resource('admin','AdminController');
 Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
-Route::resource('/user', 'UserController');
+Route::resource('/user', 'UserController')->middleware('verfiyRole');
 
 Route::get('/apply/{id}', 'ProfileController@apply');
 
