@@ -75,7 +75,7 @@ class LoginController extends Controller
         } else {
         $user = new User;
         $user->name = $socialuser->name;
-        $user->email = $socialuser->email;
+        $user->email = 'ade@gmail.com';
         $user->password = bcrypt(123456);
         $user->save();
 
