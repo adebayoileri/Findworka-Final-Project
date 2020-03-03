@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['verify'=>'true']);
+Auth::routes(['verify'=> true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//Static pages ::get
 Route::get('/about', 'Pagescontroller@about');
 Route::get('/contact', 'Pagescontroller@contact');
 Route::get('/privacy-policy', 'Pagescontroller@policy');
@@ -27,13 +29,19 @@ Route::get('/webdevelopment', 'Pagescontroller@web');
 Route::get('/datascience', 'Pagescontroller@datascience');
 Route::get('/uiux', 'Pagescontroller@uiux');
 Route::get('/mobileappdevelopment', 'Pagescontroller@mobile');
+Route::get('/suspend', 'PagesController@suspend');
+
+//Resources Routes
 Route::resource('profile', 'ProfileController');
 Route::resource('admin','AdminController');
 Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
 Route::resource('/user', 'UserController');
+
 Route::get('/apply/{id}', 'ProfileController@apply');
+
+// Social Auth
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
 

@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $enrolls = Auth::user()->enrolls;
-        return dd($enrolls);
-        // return view('home')->with('enrolls', $enrolls);
+        // return dd($enrolls);
+        return view('home')->with('enrolls', $enrolls);
     }
 }
