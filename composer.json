@@ -14,7 +14,8 @@
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.8.0",
-        "santigarcor/laratrust": "4.0.*"
+        "santigarcor/laratrust": "4.0.*",
+        "stripe/stripe-php": "^7.27"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

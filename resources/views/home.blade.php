@@ -30,8 +30,11 @@
                     User Profile
                 </div>
                 <div class="card-body">
+                    Profle Image
+                    <img src="http://www.codes4share.com/wp-content/uploads/2016/02/laravel-logo-white.png" width="70%" alt="" srcset="">
+                    <br>
                     @auth
-                    {{-- <a role="button" class="btn btn-primary" href="profile/{{user->id}}/edit">Edit Profile</a> --}}
+                    <a role="button" class="btn btn-primary" href="profile/{{Auth::user()->id}}/edit">Edit Profile</a>
                     @endauth
                 </div>
             </div>

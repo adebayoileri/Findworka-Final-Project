@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-darkblue shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
            <img src="https://academy.findworka.com/uploads/system/logo-dark.png" width="45%" alt="" srcset="">
