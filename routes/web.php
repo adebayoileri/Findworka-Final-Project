@@ -45,6 +45,8 @@ Route::get('/apply/{id}', 'ProfileController@apply');
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::get('stripe', 'PaymentController@index');
+Route::post('stripe', 'PaymentController@store');
 //Admin Routes
     Route::get('new-admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('new-admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');;

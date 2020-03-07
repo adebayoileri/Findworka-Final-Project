@@ -11,16 +11,16 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('/')}}">Home</a>
+                  <a class="nav-link text-white" href="{{url('/')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('/about')}}">About</a>
+                  <a class="nav-link text-white" href="{{url('/about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#courses">Courses</a>
+                  <a class="nav-link text-white" href="#courses">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Careers</a>
+                  <a class="nav-link text-white" href="#">Careers</a>
                 </li>
               </ul>
 
@@ -29,16 +29,16 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Signup') }}</a>
+                            <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Signup') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
