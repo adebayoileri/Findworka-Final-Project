@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\course;
 use App\user_courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,8 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $enrolls = Auth::user()->enrolls;
+        $enrolls = Auth::user()->enrolls()->get();
+        $courses = course::all();
+        $data =[
+            'courses'=> $courses,
+            'enrolls' => $enrolls
+        ];
         // return dd($enrolls);
-        return view('home')->with('enrolls', $enrolls);
+        return view('home', $data);
     }
 }

@@ -13,8 +13,8 @@ class user_courses extends Model
     //     return $this->belongsToMany(course::class);
     // }
 
-    // public function user()
-    // {
-    //     return $this->belongsToMany(User::class);
-    // }
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

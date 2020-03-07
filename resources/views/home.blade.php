@@ -12,12 +12,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    My Courses
+                   <h5>My Courses</h5>
+                    <p>Courses You enrolled for recently</p>
                     @if ($enrolls->count() > 0)
+                    @foreach ($courses as $course)
                     @foreach ($enrolls as $enroll)
-                        <p>Courses You enrolled for recently</p>
-                        <p>{{$enroll->course_id}}</p> 
+                    @if ($enroll->course_id == $course->id)
+                       <p>{{ $course->name}}</p> 
+                    @endif
                     @endforeach
+                    @endforeach
+                    <br>
+                    <h5>User's Progress</h5>
                     @else
                         <p> You have not enrolled for any course </p>
                     @endif
