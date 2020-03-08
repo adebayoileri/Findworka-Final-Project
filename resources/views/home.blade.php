@@ -25,7 +25,7 @@
                     <br>
                     <h5>User's Progress</h5>
                     @else
-                        <p> You have not enrolled for any course </p>
+                        <small> You have not enrolled for any course </small>
                     @endif
                 </div>
             </div>
