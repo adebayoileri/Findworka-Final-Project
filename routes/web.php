@@ -11,6 +11,8 @@
 |
 */
 
+// use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,14 +32,17 @@ Route::get('/datascience', 'Pagescontroller@datascience');
 Route::get('/uiux', 'Pagescontroller@uiux');
 Route::get('/mobileappdevelopment', 'Pagescontroller@mobile');
 Route::get('/suspend', 'PagesController@suspend');
+// Route::get('')
 
 //Resources Routes
 Route::resource('profile', 'ProfileController');
+Route::resource('tutor', 'TutorController');
 Route::resource('admin','AdminController');
 Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
 Route::resource('/user', 'UserController');
+
 
 Route::get('/apply/{id}', 'ProfileController@apply');
 
