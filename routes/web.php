@@ -27,6 +27,7 @@ Route::get('/about', 'Pagescontroller@about');
 Route::get('/contact', 'Pagescontroller@contact');
 Route::get('/privacy-policy', 'Pagescontroller@policy');
 Route::get('/terms', 'Pagescontroller@terms');
+Route::get('/courses/all', 'PagesController@courses');
 Route::get('/webdevelopment', 'Pagescontroller@web');
 Route::get('/datascience', 'Pagescontroller@datascience');
 Route::get('/uiux', 'Pagescontroller@uiux');
@@ -45,6 +46,7 @@ Route::resource('/user', 'UserController');
 
 
 Route::get('/apply/{id}', 'ProfileController@apply');
+Route::post('/apply/{id}', 'ProfileController@storeusercourse');
 
 // Social Auth
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');

@@ -17,7 +17,7 @@
                   <a class="nav-link text-white" href="{{url('/about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#courses">Courses</a>
+                  <a class="nav-link text-white" href="{{url('/courses/all')}}">Courses</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="#">Careers</a>

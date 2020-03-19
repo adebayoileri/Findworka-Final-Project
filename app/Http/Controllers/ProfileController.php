@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\course;
 use App\User;
+use App\user_courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -117,6 +118,21 @@ class ProfileController extends Controller
     public function apply($id){
         $course = course::find($id);
         return view('programs.apply')->with('course', $course);
+    }
+    public function storeusercourse($id){
+        // $course = course::find($id);
+        $user_courses = user_courses::all();
+        foreach($user_courses as $usercourse){
+            if($usercourse->course_id === $id && $usercourse->user_id === auth()->user()->id){
+                return redirect('/home')->with('danger', 'You already applied for this course');
+            }else{
+                $user_course = new user_courses;
+                $user_course->course_id = $id;
+                $user_course->user_id = auth()->user()->id;
+                $user_course->save();
+                return redirect('/home')->with('success', 'Course successfully applied for');
+            }
+         }
     }
 
     /**

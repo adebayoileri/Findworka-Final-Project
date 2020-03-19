@@ -50,12 +50,13 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-
+            'privilege_id' => 'required',
         ]);
             $users = new User;
             $users->name = $request->input('name');
             $users->email = $request->input('email');
             $users->password = $request->input('password');
+            $users->privilege_id = $request->input('privilege_id');
             $users->save();
 
             return redirect('/user')->with('success','User created');
@@ -95,12 +96,14 @@ class UserController extends Controller
              'name' => 'required',
              'email' => 'required',
              'password' => 'required',
+             'privilege_id' => 'required',
          ]);
  
          //Create new post
              $users = User::find($id);
              $users->name = $request->input('name');
              $users->email = $request->input('email');
+             $users->privilege_id = $request->input('privilege_id');
              $users->password = Hash::make($request['password']);
  
              $users->save();

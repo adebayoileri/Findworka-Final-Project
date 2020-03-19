@@ -105,15 +105,17 @@
                                           <td>{{ $user->name }}</td>
                                           {{-- <td>{{ $user->middlename }}</td> --}}
                                           {{-- <td>{{ $user->roles->first()->name }}</td> --}}
-                                          <td><a role="button" href="{{url('/users/edit/'.$user->id) }}" class="btn btn-primary">Edit</a> <a role="button" class="btn btn-danger">Delete</a></td>
+                                          <td><a role="button" href="{{url('/user/'.$user->id.'/edit') }}" class="btn btn-primary">Edit</a> <a role="button" class="btn btn-danger">Delete</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                               </table>
+
                         </div>
                     </div>
                 </div>
         </div>
+        <a href="/user/create" class="btn btn-primary"> Create New User</a>
 
     </div>
     <!-- End of Content Wrapper -->

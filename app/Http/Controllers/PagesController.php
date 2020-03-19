@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\course;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -14,6 +15,10 @@ class PagesController extends Controller
     }
     public function policy(){
         return view('pages.policy');
+    }
+    public function courses(){
+        $courses = course::all();
+        return view('pages.courses')->with('courses', $courses);
     }
     public function terms(){
         return view('pages.terms');
