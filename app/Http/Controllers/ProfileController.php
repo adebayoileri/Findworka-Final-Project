@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\course;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -80,13 +81,34 @@ class ProfileController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'photo' => 'image|nullable|max:1999',
         ]);
 
+         //handle file upload
+         if($request->hasFile('photo')){
+            //Filename
+            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+
+            //get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            //get the file extension
+            $extension = $request->file('photo')->getClientOriginalExtension();
+
+            $fileNameToStore=$filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('photo')->storeAs('public/photos', $fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
         //Create new post
             $user = User::find($name);
             $user->name = $request->input('name');
             $user->email = $request->input('email');
-            $user->password = $request->input('password');
+            if($request->hasFile('photo')){
+                $user->photo = $fileNameToStore;
+            }
+            $user->password = Hash::make($request->input('password'));
 
             $user->save();
 

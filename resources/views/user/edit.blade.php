@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Edit User Profile</h1>
-        {!! Form::open(['action'=>['UserController@update', $users->id], 'method' => 'POST']) !!}
+        {!! Form::open(['action'=>['UserController@update', $users->id], 'method' => 'POST', 'enctype'=>'multipart/form-data']) !!}
         <div class="form-group">
             {{Form::label('name',  'Users Name')}}
             {{Form::text('name', $users->name, ['class' =>'form-control', 'placeholder' => "Users Name"])}}
@@ -15,6 +15,10 @@
         <div class="form-group">
             {{Form::label('password',  'Users password')}}
             {{Form::password('password', ['class' =>'form-control', 'placeholder' => "User's password"])}}
+        </div>
+
+        <div class="form-group">
+            {{Form::file('cover_image')}}
         </div>
         
         {{Form::hidden('_method', 'PUT')}}

@@ -27,11 +27,11 @@
         <span>Program/Courses Management</span></a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/">
+      <a class="nav-link" href="/payment">
         <span>Payment Information</span></a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/">
+      <a class="nav-link" href="/privilege">
         <span>Privileges Control</span></a>
     </li>
 
