@@ -37,7 +37,7 @@ Route::get('/suspend', 'PagesController@suspend');
 
 //Resources Routes
 Route::resource('profile', 'ProfileController');
-Route::resource('tutor', 'TutorController');
+Route::resource('tutor', 'TutorController')->middleware('verifyRole');
 Route::resource('admin','AdminController');
 Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');
