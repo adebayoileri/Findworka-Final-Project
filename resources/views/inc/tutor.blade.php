@@ -78,16 +78,34 @@
                   <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                  <p class="profile-name">Adebayo Ilerioluwa</p>
+                  <p class="profile-name">{{Auth::user()->name}}</p>
                   <p class="designation">Backend Tutor</p>
                 </div>
               </a>
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="/tutor">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tutor">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Students Management</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tutor">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Assignments</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tutor">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Manage Curriculum</span>
               </a>
             </li>
           </ul>
@@ -115,7 +133,6 @@
           <footer class="footer">
             <div class="container-fluid clearfix">
               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2020 Findworka Academy All rights reserved.</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
               </span>
             </div>
           </footer>

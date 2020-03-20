@@ -15,8 +15,8 @@ class CreateAssignmentUserTable extends Migration
     {
         Schema::create('assignment_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('assignment_id')->unsigned();
+            $table->integer('user_id');
+            $table->integer('assignment_id');
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
