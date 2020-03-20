@@ -15,7 +15,7 @@
         <div class="form-group row">
             <label for="privilege" class="col-md-4 col-form-label text-md-right">Privilege ID</label>
 
-            <div class="col-md-6">
+            <div class="form-group col-md-6">
                <select name="privilege_id" id="">
                    <option value="1">Student</option>
                    <option value="2">Tutor</option>

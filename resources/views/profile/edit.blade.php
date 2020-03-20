@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@if (auth()->user()->privilege_id == 2)
+@extends('inc.tutor')
 
 @section('content')
+<div class="container">
         @if(Auth::user()->id == $user->id)
     <h1>Edit User Profile</h1>
         {!! Form::open(['action'=>['ProfileController@update', $user->id], 'method' => 'POST', 'enctype'=>'multipart/form-data']) !!}
@@ -25,7 +27,12 @@
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Update Profile', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
+<br>
     @else
         <h1>Error 401 | You are not authorized to view this page</h1>
     @endif
 @endsection
+@else
+   {{-- @extends('layouts.app') --}}
+@endif

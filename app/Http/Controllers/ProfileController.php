@@ -102,7 +102,7 @@ class ProfileController extends Controller
         }else{
             $fileNameToStore = 'noimage.jpg';
         }
-        //Create new post
+        //Create
             $user = User::find($name);
             $user->name = $request->input('name');
             $user->email = $request->input('email');
@@ -112,6 +112,9 @@ class ProfileController extends Controller
             $user->password = Hash::make($request->input('password'));
 
             $user->save();
+            if($user->privilege_id == 2){
+                return redirect('/tutor')->with('success', 'Your Profile has been successsfully updated');
+            }
 
             return redirect('/home')->with('success', 'User Profile successfully updated');
     }
