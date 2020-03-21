@@ -51,7 +51,7 @@
                             <label for="privilege" class="col-md-4 col-form-label text-md-right">Privilege ID</label>
 
                             <div class="col-md-6">
-                               <select name="privilege_id" id="">
+                               <select class="form-control" name="privilege_id" id="">
                                    <option value="1">Student</option>
                                    <option value="2">Tutor</option>
                                </select>
@@ -63,6 +63,22 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="suspend" class="col-md-4 col-form-label text-md-right">Manage Suspension</label>
+                            <div class="col-md-6">
+                                <select class="form-control"  name="suspend_id" id="">
+                                    <option value="0">Remove Suspension</option>
+                                    <option value="1">Suspend User</option>
+                                </select>
+                 
+                                 @error('suspend_id')
+                                     <span class="invalid-feedback" role="alert">
+                                         <strong>{{ $message }}</strong>
+                                     </span>
+                                 @enderror
+                            </div> 
+                         </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

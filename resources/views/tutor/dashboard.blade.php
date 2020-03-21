@@ -17,18 +17,26 @@
                     <th>Email</th>
                     <th>Suspend Status</th>
                     <th>Payment Status</th>
+                    <th>Progress</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>INV-87239</td>
-                    <td>Viola Ford</td>
-                    <td>Paid</td>
-                    <td>20 Jan 2019</td>
-                    <td>$755</td>
-                  </tr>
-                  
+                  @foreach ($students as $student)
+                  @foreach ($courses as $course)
+                  @if ($student->course_id == $course->id)
+                    <tr>
+                    <td>{{$student->user_id}}</td>
+                    <td>{{$course->name}}</td>
+                    <td> 1 </td>
+                    <td>{{$student->payment_status_id}}</td>
+                    <td>40%</td>
+                    <td> <a class="btn btn-danger">Suspend</a> <a class="btn btn-primary">Remove</a></td>
+                    </tr>
+                  @endif
+                  @endforeach
+                  @endforeach
+            
                 </tbody>
               </table>
             </div>

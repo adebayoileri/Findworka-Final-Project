@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes(['verify'=> true]);
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/assignments', 'AssignmentController@index');
 
 //Static pages ::get
 Route::get('/about', 'Pagescontroller@about');
@@ -43,6 +43,9 @@ Route::resource('program','ProgramController');
 Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
 Route::resource('/user', 'UserController');
+Route::resource('/students', 'StudentController');
+Route::get('/assignments', 'AssignmentController@index');
+Route::get('/assignments/create', 'AssignmentController@create');
 
 
 Route::get('/apply/{id}', 'ProfileController@apply');

@@ -12,16 +12,12 @@
     <link rel="stylesheet" href="{{ asset('/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/vendors/css/vendor.bundle.addons.css')}}">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('/assets/css/shared/style.css')}}">
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('/assets/css/demo_1/style.css')}}">
     <!-- End Layout styles -->
-    <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png')}}"/>
+    <link rel="shortcut icon" href="https://www.findworka.com/static/favicon.png"/>
   </head>
   <body>
     <div class="container-scroller">
@@ -97,7 +93,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tutor">
+              <a class="nav-link" href="/assignments">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Assignments</span>
               </a>

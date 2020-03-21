@@ -55,8 +55,9 @@ class UserController extends Controller
             $users = new User;
             $users->name = $request->input('name');
             $users->email = $request->input('email');
-            $users->password = $request->input('password');
+            $users->password = Hash::make($request->input('password'));
             $users->privilege_id = $request->input('privilege_id');
+            $users->suspend = $request->input('suspend_id');
             $users->save();
 
             return redirect('/user')->with('success','User created');
@@ -95,7 +96,7 @@ class UserController extends Controller
         $this->validate($request,[
              'name' => 'required',
              'email' => 'required',
-             'password' => 'required',
+            //  'password' => 'required',
              'privilege_id' => 'required',
          ]);
  
@@ -104,7 +105,8 @@ class UserController extends Controller
              $users->name = $request->input('name');
              $users->email = $request->input('email');
              $users->privilege_id = $request->input('privilege_id');
-             $users->password = Hash::make($request['password']);
+             $users->suspend = $request->input('suspend_id');
+            //  $users->password = Hash::make($request['password']);
  
              $users->save();
  

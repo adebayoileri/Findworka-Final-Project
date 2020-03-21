@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\course;
-use App\User;
-use App\user_courses;
 use Illuminate\Http\Request;
 
-class TutorController extends Controller
+class StudentController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
     /**
      * Display a listing of the resource.
      *
@@ -19,14 +13,7 @@ class TutorController extends Controller
      */
     public function index()
     {
-        $students = user_courses::where('course_id', '2')->get();
-        $courses =  course::all();
-        $data = [
-            'students' => $students,
-            'courses' => $courses,
-        ];
-        // dd($students);
-        return view('tutor.dashboard',$data);
+        return view('students.index');
     }
 
     /**
