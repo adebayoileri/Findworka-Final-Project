@@ -29,7 +29,7 @@ class HomeController extends Controller
         $courses = course::all();
         $data =[
             'courses'=> $courses,
-            'enrolls' => $enrolls
+            'enrolls' => $enrolls,
         ];
         // return dd($enrolls);
         return view('home', $data);

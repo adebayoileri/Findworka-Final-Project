@@ -14,10 +14,9 @@
         {{Form::file('file')}}
     </div>
     <div class="form-group">
-      <label for="Instructions">Remarks</label>
+      <label for="remarks">Remarks</label>
       <input type="text" class="form-control" id="remarks" placeholder="Remarks">
     </div>
-    {{Form::hidden('_method', 'POST')}}
     {{Form::submit('Create Assignment', ['class'=>'btn btn-primary'])}}
 {!! Form::close() !!}
   </form>

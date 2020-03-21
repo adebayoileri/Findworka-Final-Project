@@ -46,7 +46,7 @@ Route::resource('/user', 'UserController');
 Route::resource('/students', 'StudentController');
 Route::get('/assignments', 'AssignmentController@index');
 Route::get('/assignments/create', 'AssignmentController@create');
-Route::post('/assignments/create', 'AssignmentController@store')->name('createassignment');
+Route::post('/assignments/create', 'AssignmentController@store');
 
 
 Route::get('/apply/{id}', 'ProfileController@apply');

@@ -171,10 +171,9 @@
         </div>
       </header>
       <!-- partial -->
-      <div class="page-wrapper mdc-toolbar-fixed-adjust">
-        <main class="content-wrapper">
+      
          @yield('content')
-        </main>
+  
         <!-- partial:partials/_footer.html -->
         <footer>
           <div class="mdc-layout-grid">
