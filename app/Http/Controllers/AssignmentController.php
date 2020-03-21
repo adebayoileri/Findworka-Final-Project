@@ -20,7 +20,8 @@ class AssignmentController extends Controller
      $this->validate($request, [
          'name' => 'required',
          'course_name' => 'required',
-         'file'=>'required|max:2048',
+         'file' => 'required|max:2048',
+        'remarks'=>'You have not been graded'
      ]);
      if($request->hasFile('file')){
         //Filename
@@ -35,11 +36,8 @@ class AssignmentController extends Controller
         $fileNameToStore=$filename.'_'.time().'.'.$extension;
         //Upload Image
         $path = $request->file('file')->storeAs('public/assignments', $fileNameToStore);
-    }else{
-       return view('assignments.create')->with('danger', 'Attach Assignment File');
-    }
    }
-
+   }
    public function edit(){
        return view('assignments.edit');
    }

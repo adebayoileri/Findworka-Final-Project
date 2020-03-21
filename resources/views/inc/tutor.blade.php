@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tutor">
+              <a class="nav-link" href="/students">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Students Management</span>
               </a>
