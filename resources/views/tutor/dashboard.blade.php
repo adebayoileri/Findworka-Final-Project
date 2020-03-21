@@ -14,7 +14,7 @@
                 <thead>
                   <tr>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Course Enrolled</th>
                     <th>Suspend Status</th>
                     <th>Payment Status</th>
                     <th>Progress</th>
@@ -28,8 +28,16 @@
                     <tr>
                     <td>{{$student->user_id}}</td>
                     <td>{{$course->name}}</td>
-                    <td> 1 </td>
-                    <td>{{$student->payment_status_id}}</td>
+                    @if ($student->suspend == 0)
+                    <td>Not suspended</td>
+                    @else
+                    <td>Suspended</td>
+                    @endif
+                    @if($student->payment_status_id == 3)
+                    <td>
+                       Not Paid
+                      </td>
+                      @endif
                     <td>40%</td>
                     <td> <a class="btn btn-danger">Suspend</a> <a class="btn btn-primary">Remove</a></td>
                     </tr>

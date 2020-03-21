@@ -1,13 +1,13 @@
 @extends('inc.tutor')
 
 @section('content')
-    <h4>Assignments</h4>
+    <h4>Students Management</h4>
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Striped Table</h4>
-              <p class="card-description"> Add class <code>.table-striped</code> </p>
+              <h4 class="card-title">Students Enrolled</h4>
+            {{-- <p class="card-description">{{Auth::user()}}</p> --}}
               <table class="table table-striped">
                 <thead>
                   <tr>

@@ -24,7 +24,7 @@
     <!-- partial:partials/_sidebar.html -->
     <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
       <div class="mdc-drawer__header">
-        <a href="index.html" class="brand-logo">
+        <a href="/home" class="brand-logo">
           <img src="https://academy.findworka.com/uploads/system/logo-dark.png" style="width:80%"alt="logo">
         </a>
       </div>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="pages/tables/basic-tables.html">
+            <a class="mdc-drawer-link" href="/profile/{{Auth::user()->id}}/edit">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
                 Edit Profile
               </a>
