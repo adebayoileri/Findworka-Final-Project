@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
 <link rel="stylesheet" href="{{asset('/frontend/css/main.css')}}">
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{asset('/assets2/vendors/mdi/css/materialdesignicons.min.css')}}">
+  <link rel="stylesheet" href="{{('../assets2/vendors/css/vendor.bundle.base.css')}}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{{asset('/assets2/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets2/vendors/jvectormap/jquery-jvectormap.css')}}">
+  <!-- End plugin css for this page -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="{{asset('/assets2/css/demo/style.css')}}">
 </head>
 <body>
     <body>
@@ -24,7 +34,6 @@
                     @csrf
                     <div class="form-label-group">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                      {{-- <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus> --}}
                       <label for="email">Email address</label>
                       @error('email')
                       <span class="invalid-feedback" role="alert">

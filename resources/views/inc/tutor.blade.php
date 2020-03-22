@@ -75,7 +75,7 @@
                 </div>
                 <div class="text-wrapper">
                   <p class="profile-name">{{Auth::user()->name}}</p>
-                  <p class="designation">Backend Tutor</p>
+                  <p class="designation">Tutor</p>
                 </div>
               </a>
             </li>

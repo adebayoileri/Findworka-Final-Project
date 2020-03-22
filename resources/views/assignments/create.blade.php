@@ -6,18 +6,25 @@
   {{Form::label('name',  'Name')}}
   {{Form::text('name','', ['class' =>'form-control', 'placeholder' => "Name"])}}
 </div>
+
 <div class="form-group">
-  {{Form::label('course_name',  'Course Name')}}
-  {{Form::text('course_name','', ['class' =>'form-control', 'placeholder' => "Course Name"])}}
+  <label for="course">Course Name</label>
+  <select type="number" name="course_name" class="form-control" >
+      @foreach ($course as $option)
+          <option value="{{$option->name}}">{{$option->name}}</option>
+      @endforeach
+  </select>
 </div>
+
     <div class="form-group">
         {{Form::file('file')}}
     </div>
-    <div class="form-group">
+    {{-- <div class="form-group">
       <label for="remarks">Remarks</label>
       <input type="text" class="form-control" id="remarks" placeholder="Remarks">
-    </div>
+    </div> --}}
     {{Form::submit('Create Assignment', ['class'=>'btn btn-primary'])}}
 {!! Form::close() !!}
   </form>
+  <br>
 @endsection

@@ -12,8 +12,8 @@
                   <tr>
                     <th> Course Name</th>
                     <th> Assignment Title </th>
-                    <th> Remarks </th>
-                    <th> File </th>
+                   
+                    <th> Download File</th>
                     <th>Created At </th>
                   </tr>
                 </thead>
@@ -23,10 +23,8 @@
                     <td class="py-1">
                       {{$assignment->course_name}}
                     <td>   {{$assignment->name}} </td>
-                    <td>
-                      {{$assignment->remarks}}
-                    </td>
-                    {{-- <td>   {{$assignment->file}}</td> --}}
+                    
+                    <td> <a class="btn btn-primary">Download Assignment File</a></td>
                     <td>   {{$assignment->created_at}} </td>
                   </tr>
                   @endforeach
@@ -34,7 +32,11 @@
               </table>
             </div>
           </div>
-        </div>
+          </div>
+          <div class="col-lg-12-margin stretch-card">
+            <a href="{{ url('/assignments/create') }}" class="btn btn-primary"> Create Assigments</a>
+          </div>
+        <br>
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">

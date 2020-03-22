@@ -6,9 +6,9 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex justify-content-between">
-              <h4 class="card-title mb-0">Backend Students</h4>
+              <h4 class="card-title mb-0">{{$course->name}} Students</h4>
             </div>
-            <p>List of students enroll in The Backend Development Program</p>
+          <p>List of students enroll in {{$course->name}}</p>
             <div class="table-responsive">
               <table class="table table-striped table-hover">
                 <thead>
@@ -23,8 +23,8 @@
                 </thead>
                 <tbody>
                   @foreach ($students as $student)
-                  @foreach ($courses as $course)
-                  @if ($student->course_id == $course->id)
+                  {{-- @foreach ($courses as $course)
+                  @if ($student->course_id == $course->id) --}}
                     <tr>
                     <td>{{$student->user_id}}</td>
                     <td>{{$course->name}}</td>
@@ -38,11 +38,11 @@
                        Not Paid
                       </td>
                       @endif
-                    <td>40%</td>
+                    <td>{{$student->progress}}%</td>
                     <td> <a class="btn btn-danger">Suspend</a> <a class="btn btn-primary">Remove</a></td>
                     </tr>
-                  @endif
-                  @endforeach
+                  {{-- @endif --}}
+                  {{-- @endforeach --}}
                   @endforeach
             
                 </tbody>
