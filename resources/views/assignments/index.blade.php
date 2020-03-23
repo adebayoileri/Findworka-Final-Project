@@ -15,6 +15,7 @@
                    
                     <th> Download File</th>
                     <th>Created At </th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -25,7 +26,8 @@
                     <td>   {{$assignment->name}} </td>
                     
                     <td> <a class="btn btn-primary" href="/assignments/{{$assignment->id}}/download">Download Assignment File</a></td>
-                    <td>   {{$assignment->created_at}} </td>
+                    {{-- <td>   {{$assignment->created_at}} </td> --}}
+                    <td> <a href="" class="btn btn-success">Edit assignment</a> </td>
                   </tr>
                   @endforeach
                 </tbody>

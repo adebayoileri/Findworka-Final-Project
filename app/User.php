@@ -36,15 +36,23 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function courses(){
-        return $this->hasMany(course::class);
-    }
+    // public function courses(){
+    //     return $this->hasMany(course::class);
+    // }
 
     public function enrolls()
     {
-        return $this->hasMany(user_courses::class);
+        return $this->hasMany(user_courses::class)->withPivot(['progress','payment_id','payment_status_id']);;
     }
     public function submissions(){
         return $this->belongsToMany(Assignment::class)->withPivot('course_id');
+    }
+
+    public function assignments(){
+        return $this->belongsToMany(Assignment::class)->withPivot('course_id');
+    }
+
+    public function privilege(){
+        return $this->belongsTo(privilege::class);
     }
 }

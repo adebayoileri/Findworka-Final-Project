@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Assignment;
+use App\course;
+use App\Submission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,18 +18,15 @@ class SubmissionController extends Controller
     public function index()
     {
         $usercourse = Auth::user()->enrolls()->first();
-        // $assignments = Assignment::where('course_id', $usercourse['course_id'])->get();
-        $recentcourse = end($usercourse);
-        $course_name = '';
-        foreach ($recentcourse as $course) 
-            $course_name = $course->name;
-        $recent_task = Assignment::where('course_name',$course_name)->get();
-        $tasks = $recent_task;
-        dd($tasks);
-        // return view("submissions.index");
+        $assignments = Assignment::where('course_id', $usercourse['course_id'])->get();
+
+        $data = [
+            'assignments' => $assignments,
+            'usercourse' => $usercourse,
+        ];
 
         // dd($recentassignments);
-        // return view('submissions.index')->with('assignments', $assignments)->with('usercourse', $usercourse);
+        return view('submissions.index', $data);
     }
 
     /**
@@ -37,7 +36,19 @@ class SubmissionController extends Controller
      */
     public function create(Request $request)
     {
-        
+        $courses = Auth::user()->enrolls()->get();
+        $recent_course = $courses;
+        $course_id = '';
+
+        foreach ($recent_course as $course) {
+            $course_id = $course->course_id;        
+            $recent_task = Assignment::where('course_id', $course_id)->get();
+            $course = course::where('id', $course['course_id'])->get();
+            $tasks = end($recent_task);
+        }
+        //  dd($course);
+         
+        return view('submissions.create')->with('tasks', $tasks)->with('course', $course);
     }
 
     /**
@@ -48,7 +59,33 @@ class SubmissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+            'course_name' => 'required',
+            'file' => 'required|max:2048',
+            'assignment_id' => 'required',
+        ]);
+
+        $submission= new Submission;
+        $submission->name = $request->input('name');
+        $submission->course_name = $request->input('course_name');
+        if($request->hasFile('submission')){
+            $file = $request['submission'];
+            $filename = $file->getClientOriginalName();
+            $file->storeAs('public/submissions',$filename);
+            $submission->file = $filename;      
+        }
+        $submission->assignment_id = $request->input('assignment_id');
+        $submission->remarks = 'You have not graded';
+        $submission->save();
+
+        $user = Auth::user();
+        $course_id =  Auth::user()->enrolls()->first();
+        $progress = $course_id->pivot->progress;
+        $submission->users()->attach($user, ['course_id'=>$course_id['id']]);
+        $user->enrolls()->updateExistingPivot($course_id['id'],['progress'=>$progress + 8.33]);
+        return redirect('/submissions')->with('success','Assignment submitted');
+
     }
 
     /**

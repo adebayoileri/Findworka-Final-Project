@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\course;
+use App\user_courses;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -13,7 +15,20 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('students.index');
+        $courseoffered = auth()->user()->enrolls()->get()->first()['course_id'];
+        $students = user_courses::where('course_id', $courseoffered)->get();
+        $courses =  course::all();
+
+        foreach($courses as $course){
+            if($courseoffered == $course->id){
+                $data = [
+                    'students' => $students,
+                    'course' => $course,
+                ];
+                // dd($courseoffered);
+                return view('students.index',$data);
+            }
+        }
     }
 
     /**
