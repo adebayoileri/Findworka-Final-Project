@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Assignment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class TaskController extends Controller
+class SubmissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,19 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $usercourse = Auth::user()->enrolls()->first();
+        // $assignments = Assignment::where('course_id', $usercourse['course_id'])->get();
+        $recentcourse = end($usercourse);
+        $course_name = '';
+        foreach ($recentcourse as $course) 
+            $course_name = $course->name;
+        $recent_task = Assignment::where('course_name',$course_name)->get();
+        $tasks = $recent_task;
+        dd($tasks);
+        // return view("submissions.index");
+
+        // dd($recentassignments);
+        // return view('submissions.index')->with('assignments', $assignments)->with('usercourse', $usercourse);
     }
 
     /**
@@ -21,9 +35,9 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
     }
 
     /**

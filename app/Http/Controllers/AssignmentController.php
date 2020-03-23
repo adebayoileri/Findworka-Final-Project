@@ -18,16 +18,16 @@ class AssignmentController extends Controller
         'assignments'=> $assignments,
         'tutorcourse' => $tutorcourse,
     ];
+
     // dd($assignments);
 
     return view('assignments.index', $data);
    }
 
    public function create(){
-        $courses = auth()->user()->enrolls()->first()->get();
+        $courses = auth()->user()->enrolls()->get();
         foreach($courses as $mycourse){
         $course = course::where('id', $mycourse['course_id'])->get();
-        // dd($course); 
         return view('assignments.create')->with('course', $course);
         // $tutorcourse_id = Auth::user()->enrolls()->first()->get();
         // dd($tutorcourse_id);
@@ -54,10 +54,22 @@ class AssignmentController extends Controller
 //    $tutorcourse_id = course::where('id', $tutorcourse['course_id'])->first()->get();
 // }
 
+// $courses = auth()->user()->enrolls()->first()->get();
+// foreach($courses as $mycourse){
+// $course = course::where('id', $mycourse['course_id'])->get();
+// }
+
+// $courses = auth()->user()->enrolls()->first()->get();
+// foreach($courses as $mycourse){
+// $course = course::where('id', $mycourse['course_id'])->get();
+// foreach($course as $tutorcourse){
+   
+// }
+// }
     $assignment->name = $request->input('name');
     $assignment->course_name = $request->input('course_name');
-    $assignment->remarks = 'You have not been graded';
-    // $assignment->course_id = $tutorcourse_id;
+    // $assignment->remarks = 'You have not been graded';
+    $assignment->course_id = $request->input('course_id');
     $assignment->save();
     // $user = Auth::user();
     //     $progress = Auth::user()->enrolls()->first()->pivot->progress;

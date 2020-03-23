@@ -16,6 +16,15 @@
   </select>
 </div>
 
+<div class="form-group">
+  <label for="course_id">Course id</label>
+  <select type="number" name="course_id" class="form-control" >
+      @foreach ($course as $option)
+          <option value="{{$option->id}}">{{$option->id}}</option>
+      @endforeach
+  </select>
+</div>
+
     <div class="form-group">
         {{Form::file('file')}}
     </div>
