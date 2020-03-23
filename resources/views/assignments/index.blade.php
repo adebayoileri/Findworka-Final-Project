@@ -24,7 +24,7 @@
                       {{$assignment->course_name}}
                     <td>   {{$assignment->name}} </td>
                     
-                    <td> <a class="btn btn-primary">Download Assignment File</a></td>
+                    <td> <a class="btn btn-primary" href="/assignments/{{$assignment->id}}/download">Download Assignment File</a></td>
                     <td>   {{$assignment->created_at}} </td>
                   </tr>
                   @endforeach

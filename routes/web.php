@@ -47,6 +47,7 @@ Route::resource('/students', 'StudentController');
 Route::get('/assignments', 'AssignmentController@index');
 Route::get('/assignments/create', 'AssignmentController@create');
 Route::post('/assignments/create', 'AssignmentController@store');
+Route::get('/assignments/{id}/download', 'FileDownloadsController@assignmentdownload');
 
 
 Route::get('/apply/{id}', 'ProfileController@apply');
