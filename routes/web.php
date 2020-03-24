@@ -22,7 +22,8 @@ Auth::routes(['verify'=> true]);
 Route::get('/home', 'UserDashBoardController@index');
 // Route::get('/assignments', 'AssignmentController@index')->middleware('verifyRole');
 Route::resource('/submissions', 'SubmissionController');
-Route::get('/submissions/{id}/download', 'FileDownloadsController@submissiondownload');
+Route::get('/submissions/{id}/edit', 'SubmissionController@edit')->middleware('verifyRole');
+Route::get('/submissions/{id}/download', 'FileDownloadsController@submissiondownload')->middleware('verifyRole');
 //Static pages ::get
 Route::get('/about', 'Pagescontroller@about');
 Route::get('/contact', 'Pagescontroller@contact');
@@ -49,7 +50,7 @@ Route::resource('/curriculum', 'CurriculumController');
 Route::get('/assignments', 'AssignmentController@index')->middleware('verifyRole');
 Route::get('/assignments/create', 'AssignmentController@create');
 Route::post('/assignments/create', 'AssignmentController@store');
-Route::get('/assignments/{id}/download', 'FileDownloadsController@assignmentdownload');
+Route::get('/assignments/{id}/download', 'FileDownloadsController@assignmentdownload')->middleware('verifyRole');
 
 Route::post('/submissions/create', 'SubmissionController@store');
 Route::get('/apply/{id}', 'ProfileController@apply');
