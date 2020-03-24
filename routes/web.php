@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes(['verify'=> true]);
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'UserDashBoardController@index');
 Route::get('/assignments', 'AssignmentController@index');
 Route::resource('/submissions', 'SubmissionController');
 Route::get('/submissions/{id}/download', 'FileDownloadsController@submissiondownload');

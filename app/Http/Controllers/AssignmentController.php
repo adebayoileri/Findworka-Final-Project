@@ -51,34 +51,12 @@ class AssignmentController extends Controller
         $file->storeAs('public/assignments',$filename);
         $assignment->file = $filename;      
     }
-//     $tutorcourses = auth()->user()->enrolls()->first()->get();
-//     foreach($tutorcourses as $tutorcourse){
-//    $tutorcourse_id = course::where('id', $tutorcourse['course_id'])->first()->get();
-// }
 
-// $courses = auth()->user()->enrolls()->first()->get();
-// foreach($courses as $mycourse){
-// $course = course::where('id', $mycourse['course_id'])->get();
-// }
-
-// $courses = auth()->user()->enrolls()->first()->get();
-// foreach($courses as $mycourse){
-// $course = course::where('id', $mycourse['course_id'])->get();
-// foreach($course as $tutorcourse){
-   
-// }
-// }
     $assignment->name = $request->input('name');
     $assignment->course_name = $request->input('course_name');
     // $assignment->remarks = 'You have not been graded';
     $assignment->course_id = $request->input('course_id');
-    $assignment->save();
-    // $user = Auth::user();
-    //     $progress = Auth::user()->enrolls()->first()->pivot->progress;
-    //     $course_id =  Auth::user()->enrolls()->first();
-    //     $assignment->users()->attach($user, ['course_id'=>$course_id['id']]);
-    //     $user->enrolls()->updateExistingPivot($course_id['id'],['progress'=>$progress + 8.33]);
-    
+    $assignment->save();   
     return redirect('/assignments')->with('success', 'Assignment has been created');
    }
 //    public function edit(){

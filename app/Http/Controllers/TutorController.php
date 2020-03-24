@@ -19,20 +19,20 @@ class TutorController extends Controller
      */
     public function index()
     {
-        $courseoffered = auth()->user()->enrolls()->get()->first()['course_id'];
-        $students = user_courses::where('course_id', $courseoffered)->get();
-        $courses =  course::all();
+        // $courseoffered = auth()->user()->enrolls()->get()->first()['course_id'];
+        // $students = user_courses::where('course_id', $courseoffered)->get();
+        // $courses =  course::all();
 
-        foreach($courses as $course){
-            if($courseoffered == $course->id){
-                $data = [
-                    'students' => $students,
-                    'course' => $course,
-                ];
-                // dd($courseoffered);
-                return view('tutor.dashboard',$data);
-            }
-        }
+        // foreach($courses as $course){
+        //     if($courseoffered == $course->id){
+        //         $data = [
+        //             'students' => $students,
+        //             'course' => $course,
+        //         ];
+        //         // dd($courseoffered);
+        //         return view('tutor.dashboard',$data);
+        //     }
+        // }
     }
 
     /**

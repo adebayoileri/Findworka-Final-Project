@@ -9,10 +9,14 @@ use Illuminate\Http\Request;
 
 class FileDownloadsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function curriculumdownload($id) {
         $file = Curriculum::find($id);
         $file_name = $file->file;
-        $pathToFile = public_path('storage/files/'.$file_name);
+        $pathToFile = public_path('storage/curriculums/'.$file_name);
         return response()->download($pathToFile);
     } 
   
