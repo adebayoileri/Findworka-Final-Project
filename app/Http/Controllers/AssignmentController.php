@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Assignment;
 use App\course;
+use App\Submission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -13,13 +14,14 @@ class AssignmentController extends Controller
    public function index(){
     $tutorcourse = Auth::user()->enrolls()->first();
     $assignments = Assignment::where('course_id', $tutorcourse['course_id'])->get();
-
+    $submissions = Submission::where('course_name', $tutorcourse['course_id'])->get();
     $data=[
         'assignments'=> $assignments,
         'tutorcourse' => $tutorcourse,
+        'submissions' => $submissions
     ];
 
-    // dd($assignments);
+    // dd($submissions);
 
     return view('assignments.index', $data);
    }
@@ -79,14 +81,14 @@ class AssignmentController extends Controller
     
     return redirect('/assignments')->with('success', 'Assignment has been created');
    }
-   public function edit(){
-       return view('assignments.edit');
-   }
+//    public function edit(){
+//        return view('assignments.edit');
+//    }
 
-   public function update(Request $request){
-        $this->validate($request, [
-            'name'=>'required'
-        ]);
-   }
+//    public function update(Request $request){
+//         $this->validate($request, [
+//             'name'=>'required'
+//         ]);
+//    }
 
 }

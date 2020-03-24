@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Assignment;
 use App\Curriculum;
+use App\Submission;
 use Illuminate\Http\Request;
 
 class FileDownloadsController extends Controller
@@ -21,4 +22,11 @@ class FileDownloadsController extends Controller
           $pathToFile = public_path('storage/assignments/'.$file_name);
           return response()->download($pathToFile);    
       }
+
+      public function submissiondownload($id){
+        $submission = Submission::find($id);
+        $file_name = $submission->file;
+        $pathToFile = public_path('storage/submissions/'.$file_name);
+        return response()->download($pathToFile);    
+    }
 }

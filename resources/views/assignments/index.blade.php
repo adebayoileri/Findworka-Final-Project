@@ -47,25 +47,25 @@
                 <thead>
                   <tr>
                     <th> # </th>
-                    <th> First name </th>
-                    <th> Progress </th>
-                    <th> Amount </th>
-                    <th> Deadline </th>
+                    <th>Assignment ID </th>
+                    <th> Title </th>
+                    <th> File </th>
+                    <th>  Remarks</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($submissions as $submission)
                   <tr>
-                    <td> 1 </td>
-                    <td> Herman Beck </td>
-                    <td>
-                      <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </td>
-                    <td> $ 77.99 </td>
-                    <td> May 15, 2015 </td>
+                    <td> {{$submission->id}} </td>
+                    <td> {{$submission->assignment_id}} </td>
+                    <td>{{ $submission->name }}</td>
+                    <td> <a class="btn btn-success" href="/submissions/{{$submission->id}}/download"> Download Submission </a></td>
+                    <td> {{$submission->remarks}} </td>
+                  <td> <a class="btn btn-primary" href="/submissions/{{$submission->id}}/edit">Grade submission</a> </td>
                   </tr>
-                 
+                  
+                  @endforeach
                 </tbody>
               </table>
             </div>

@@ -22,6 +22,7 @@ Auth::routes(['verify'=> true]);
 Route::get('/home', 'HomeController@index');
 Route::get('/assignments', 'AssignmentController@index');
 Route::resource('/submissions', 'SubmissionController');
+Route::get('/submissions/{id}/download', 'FileDownloadsController@submissiondownload');
 //Static pages ::get
 Route::get('/about', 'Pagescontroller@about');
 Route::get('/contact', 'Pagescontroller@contact');

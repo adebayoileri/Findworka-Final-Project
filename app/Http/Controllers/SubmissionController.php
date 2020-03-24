@@ -85,7 +85,6 @@ class SubmissionController extends Controller
         $submission->users()->attach($user, ['course_id'=>$course_id['id']]);
         // $user->enrolls()->updateExistingPivot($course_id['id'],['progress'=>$progress + 8.33]);
         return redirect('/submissions')->with('success','Assignment submitted');
-
     }
 
     /**
@@ -107,7 +106,10 @@ class SubmissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $submissions = Submission::where('id', $id)->get();
+        foreach($submissions as $submission)
+        // dd($submission);
+         return view('submissions.edit')->with('submission', $submission);
     }
 
     /**
@@ -119,7 +121,21 @@ class SubmissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+            'course_name' => 'required',
+            'remarks' => 'required',
+            'assignment_id' => 'required',
+            ]);
+        $submission = Submission::find($id);
+            $submission->name = $request->input('name');
+            $submission->course_name = $request->input('course_name');
+            $submission->remarks = $request->input('remarks');
+            $submission->assignment_id = $request->input('assignment_id');
+        // dd($submission);
+            $submission->save();
+        return redirect('/assignments')->with('success', 'Submission has been successfully graded');
+
     }
 
     /**
