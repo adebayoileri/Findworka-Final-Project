@@ -13,7 +13,7 @@ class CreateCurriculumTable extends Migration
      */
     public function up()
     {
-        Schema::create('curriculum', function (Blueprint $table) {
+        Schema::create('curricula', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('file');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateCurriculumTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('curriculum');
+        Schema::dropIfExists('curricula');
     }
 }

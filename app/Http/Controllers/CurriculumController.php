@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Curriculum;
 use Illuminate\Http\Request;
 
 class CurriculumController extends Controller
@@ -23,7 +24,7 @@ class CurriculumController extends Controller
      */
     public function create()
     {
-        //
+        return view('curriculum.create');
     }
 
     /**
@@ -34,7 +35,19 @@ class CurriculumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $this->validate($request,[
+           'file' => 'required|max:2048',
+       ]);
+       $curriculum = new Curriculum;
+
+       if($request->hasFile('file')){
+        $file = $request['file'];
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/curriculums',$filename);
+        $curriculum->file = $filename;      
+    }
+    $curriculum->save();
+    return redirect('/admin-dashboard')->with('success', 'Curiculum was successfully created');
     }
 
     /**

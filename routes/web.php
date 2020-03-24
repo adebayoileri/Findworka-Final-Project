@@ -45,6 +45,7 @@ Route::resource('privilege', 'PrivilegeController');
 Route::resource('payment_status', 'PaymentStatusController');
 Route::resource('/user', 'UserController');
 Route::resource('/students', 'StudentController');
+Route::resource('/curriculum', 'CurriculumController');
 Route::get('/assignments', 'AssignmentController@index');
 Route::get('/assignments/create', 'AssignmentController@create');
 Route::post('/assignments/create', 'AssignmentController@store');
