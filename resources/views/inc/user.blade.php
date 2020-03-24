@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>User Dashboard</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('/assets2/vendors/mdi/css/materialdesignicons.min.css')}}">
   <link rel="stylesheet" href="{{('../assets2/vendors/css/vendor.bundle.base.css')}}">
@@ -122,7 +123,15 @@
                       <i class="mdi mdi-settings-outline text-primary"></i>                      
                     </div>
                     <div class="item-content d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="item-subject font-weight-normal">Logout</h6>
+                      <h6 class="item-subject font-weight-normal"><a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                         {{ __('Logout') }}
+                     </a>
+
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                         @csrf
+                     </form></h6>
                     </div>
                   </li>
                 </ul>

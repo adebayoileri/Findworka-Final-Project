@@ -65,7 +65,13 @@ class ProfileController extends Controller
     public function edit($name)
     {
         $user = User::find($name);
-        return view('profile.edit')->with('user', $user);
+        $privilege = auth()->user()->privilege_id;
+        if ($privilege == 1) {
+          return view('profile.editstudent')->with('user', $user);
+        } elseif($privilege == 2) {
+            return view('profile.edit')->with('user', $user);
+        }
+        
     }
 
     /**

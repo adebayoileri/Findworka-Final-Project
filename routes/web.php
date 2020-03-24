@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes(['verify'=> true]);
 
 Route::get('/home', 'UserDashBoardController@index');
-Route::get('/assignments', 'AssignmentController@index');
+// Route::get('/assignments', 'AssignmentController@index')->middleware('verifyRole');
 Route::resource('/submissions', 'SubmissionController');
 Route::get('/submissions/{id}/download', 'FileDownloadsController@submissiondownload');
 //Static pages ::get
@@ -40,13 +40,13 @@ Route::get('/suspend', 'PagesController@suspend');
 Route::resource('profile', 'ProfileController');
 Route::resource('tutor', 'TutorController')->middleware('verifyRole');
 Route::resource('admin','AdminController');
-Route::resource('program','ProgramController');
-Route::resource('privilege', 'PrivilegeController');
-Route::resource('payment_status', 'PaymentStatusController');
-Route::resource('/user', 'UserController');
-Route::resource('/students', 'StudentController');
+Route::resource('program','ProgramController')->middleware('verifyRole');
+Route::resource('privilege', 'PrivilegeController')->middleware('verifyRole');
+Route::resource('payment_status', 'PaymentStatusController')->middleware('verifyRole');
+Route::resource('/user', 'UserController')->middleware('verifyRole');
+Route::resource('/students', 'StudentController')->middleware('verifyRole');
 Route::resource('/curriculum', 'CurriculumController');
-Route::get('/assignments', 'AssignmentController@index');
+Route::get('/assignments', 'AssignmentController@index')->middleware('verifyRole');
 Route::get('/assignments/create', 'AssignmentController@create');
 Route::post('/assignments/create', 'AssignmentController@store');
 Route::get('/assignments/{id}/download', 'FileDownloadsController@assignmentdownload');
