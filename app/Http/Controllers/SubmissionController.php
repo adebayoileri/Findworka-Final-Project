@@ -66,13 +66,13 @@ class SubmissionController extends Controller
             'assignment_id' => 'required',
         ]);
 
-        $submission= new Submission;
+        $submission = new Submission;
         $submission->name = $request->input('name');
         $submission->course_name = $request->input('course_name');
-        if($request->hasFile('submission')){
-            $file = $request['submission'];
+        if($request->hasFile('file')){
+            $file = $request['file'];
             $filename = $file->getClientOriginalName();
-            $file->storeAs('public/submissions',$filename);
+            $file->storeAs('public/submissions', $filename);
             $submission->file = $filename;      
         }
         $submission->assignment_id = $request->input('assignment_id');
@@ -81,9 +81,9 @@ class SubmissionController extends Controller
 
         $user = Auth::user();
         $course_id =  Auth::user()->enrolls()->first();
-        $progress = $course_id->pivot->progress;
+        // $progress = $course_id->pivot->progress;
         $submission->users()->attach($user, ['course_id'=>$course_id['id']]);
-        $user->enrolls()->updateExistingPivot($course_id['id'],['progress'=>$progress + 8.33]);
+        // $user->enrolls()->updateExistingPivot($course_id['id'],['progress'=>$progress + 8.33]);
         return redirect('/submissions')->with('success','Assignment submitted');
 
     }

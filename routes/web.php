@@ -49,7 +49,7 @@ Route::get('/assignments/create', 'AssignmentController@create');
 Route::post('/assignments/create', 'AssignmentController@store');
 Route::get('/assignments/{id}/download', 'FileDownloadsController@assignmentdownload');
 
-
+Route::post('/submissions/create', 'SubmissionController@store');
 Route::get('/apply/{id}', 'ProfileController@apply');
 Route::post('/apply/{id}', 'ProfileController@storeusercourse');
 

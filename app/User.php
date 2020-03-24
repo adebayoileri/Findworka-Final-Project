@@ -42,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function enrolls()
     {
-        return $this->hasMany(user_courses::class)->withPivot(['progress','payment_id','payment_status_id']);;
+        return $this->hasMany(user_courses::class);
     }
     public function submissions(){
         return $this->belongsToMany(Assignment::class)->withPivot('course_id');

@@ -20,9 +20,9 @@
                     @endforeach
                     <br>
                     <h5>User's Progress</h5>
-                    @else
+                    {{-- @else
                         <small> You have not enrolled for any course </small>
-                    @endif
+                    @endif --}}
                 </h5>
                 <h4 class="tx-12 text-muted"><strong>{{$enroll->progress}}% </strong>reached</h4>
                 <div class="card-icon-wrapper">
@@ -37,6 +37,9 @@
             <div class="card-inner">
               <h5 class="card-title">Payment Information</h5>
               <h5 class="font-weight-light pb-2 mb-1 border-bottom">Course Price: ${{ $course->price }}</h5>
+              @else
+              <small> You have not enrolled for any course </small>
+          @endif
               <p class="tx-12 text-muted">
               <a href="/stripe" class="mdc-button text-button--info">
                   Pay Now

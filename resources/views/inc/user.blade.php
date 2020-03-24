@@ -183,7 +183,7 @@
         </div>
       </header>
       <!-- partial -->
-      
+        @include('inc.message')
          @yield('content')
   
         <!-- partial:partials/_footer.html -->

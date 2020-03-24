@@ -1,6 +1,6 @@
 @if (auth()->user()->privilege_id == 2)
-@extends('inc.tutor')
-
+    @extends('inc.tutor')
+    
 @section('content')
 <div class="container">
         @if(Auth::user()->id == $user->id)
