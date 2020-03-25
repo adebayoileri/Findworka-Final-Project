@@ -81,7 +81,7 @@
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="/tutor">
+              <a class="nav-link" href="/home">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
@@ -99,7 +99,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tutor">
+              <a class="nav-link" href="/curriculum">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Manage Curriculum</span>
               </a>

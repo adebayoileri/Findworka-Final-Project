@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['verify'=> true]);
+// Auth::routes(['verify'=> true]);
+Auth::routes();
 
 Route::get('/home', 'UserDashBoardController@index');
 // Route::get('/assignments', 'AssignmentController@index')->middleware('verifyRole');
@@ -34,8 +35,12 @@ Route::get('/webdevelopment', 'Pagescontroller@web');
 Route::get('/datascience', 'Pagescontroller@datascience');
 Route::get('/uiux', 'Pagescontroller@uiux');
 Route::get('/mobileappdevelopment', 'Pagescontroller@mobile');
-Route::get('/suspend', 'PagesController@suspend');
+Route::get('/{id}/suspend', 'AdminDashboardController@suspend');
+Route::get('/{id}/unsuspend', 'AdminDashboardController@unsuspend');
+
 // Route::get('')
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 
 //Resources Routes
 Route::resource('profile', 'ProfileController');
@@ -53,15 +58,19 @@ Route::post('/assignments/create', 'AssignmentController@store');
 Route::get('/assignments/{id}/download', 'FileDownloadsController@assignmentdownload')->middleware('verifyRole');
 
 Route::post('/submissions/create', 'SubmissionController@store');
-Route::get('/apply/{id}', 'ProfileController@apply');
-Route::post('/apply/{id}', 'ProfileController@storeusercourse');
+Route::get('/apply/{id}', 'PaymentController@apply');
+Route::post('/apply/{id}', 'PaymentController@storeusercourse');
 
 // Social Auth
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
 
+
+// Payments Routes
 Route::get('stripe', 'PaymentController@index');
 Route::post('stripe', 'PaymentController@store');
+
+
 //Admin Routes
     Route::get('new-admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('new-admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');;

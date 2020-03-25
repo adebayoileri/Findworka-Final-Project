@@ -17,8 +17,11 @@ class UserDashBoardController extends Controller
     public function index()
     {
         $privilege = auth()->user()->privilege_id;
-
-        if($privilege == 1){        
+        $suspend = auth()->user()->suspend;
+        if($privilege == 1){   
+            if($suspend == 1){
+                return view('user.suspend');
+            }     
             $enrolls = Auth::user()->enrolls()->get();
             $courses = course::all();
             $data =[

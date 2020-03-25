@@ -82,7 +82,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">List of Students</div>
+                        <div class="card-header">Available users</div>
         
                         <div class="card-body">
                             @if (session('status'))
@@ -95,6 +95,7 @@
                                   <tr>
                                     <th scope="col">id</th>
                                     <th scope="col">Name</th>
+                                    <th>User Type</th>
                                     <th scope="col">Action</th>
                                   </tr>
                                 </thead>
@@ -103,9 +104,16 @@
                                           <tr>
                                           <th scope="row">{{ $user->id }}</th>
                                           <td>{{ $user->name }}</td>
-                                          {{-- <td>{{ $user->middlename }}</td> --}}
-                                          {{-- <td>{{ $user->roles->first()->name }}</td> --}}
-                                          <td><a role="button" href="{{url('/user/'.$user->id.'/edit') }}" class="btn btn-primary">Edit</a> <a role="button" class="btn btn-danger">Delete</a></td>
+                                           @if ($user->privilege_id == 1)
+                                             <td>Student</td> 
+                                          @else
+                                              <td>Tutor</td>
+                                          @endif 
+                                          <td><a role="button" href="{{url('/user/'.$user->id.'/edit') }}" class="btn btn-primary">Edit</a>@if ($user->suspend == 0)
+                                            <a href="/{{$user->id}}/suspend" role="button" class="btn btn-danger">Suspend</a>
+                                          @else
+                                          <a href="/{{$user->id}}/unsuspend" role="button" class="btn btn-danger">Unsuspend</a>
+                                          @endif</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

@@ -37,6 +37,10 @@
                     <td>
                        Not Paid
                       </td>
+                      @elseif($student->payment_status_id == 2)
+                      <td>Installment</td>
+                      @else 
+                      <td>Fully Paid</td>
                       @endif
                     <td>{{$student->progress}}%</td>
                     <td> <a class="btn btn-danger">Suspend</a> <a class="btn btn-primary">Remove</a></td>

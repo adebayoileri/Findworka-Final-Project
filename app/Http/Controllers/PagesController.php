@@ -35,7 +35,4 @@ class PagesController extends Controller
     public function mobile(){
         return view('pages.mobile');
     }
-    public function suspend(){
-        return view('user.suspend');
-        }
 }

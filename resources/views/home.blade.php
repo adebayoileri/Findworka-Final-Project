@@ -36,15 +36,15 @@
           <div class="mdc-card info-card info-card--danger">
             <div class="card-inner">
               <h5 class="card-title">Payment Information</h5>
-              <h5 class="font-weight-light pb-2 mb-1 border-bottom">Course Price: ${{ $course->price }}  </h5>
+              <h5 class="font-weight-light pb-2 mb-1 border-bottom">Course Price: : ₦{{ $course->price }}  </h5>
               <h5 class="font-weight-light pb-2 mb-1 border-bottom">Payment status: @if($enroll->payment_status_id == 3) Not Paid @else Paid  @endif  </h5>
+              <p class="tx-12 text-muted">
+              @if($enroll->payment_status_id == 3)  <a href="/apply/{{$course->id}}" class="mdc-button text-button--info">  Pay Now
+                </a>@elseif($enroll->payment_status_id == 2) Installment Payment @else Fully paid @endif
+              </p>
               @else
               <small> You have not enrolled for any course </small>
           @endif
-              <p class="tx-12 text-muted">
-                @if($enroll->payment_status_id == 3)  <a href="/stripe" class="mdc-button text-button--info">  Pay Now
-                </a>@elseif($enroll->payment_status_id == 2) Installment Payment @else Fully paid @endif
-              </p>
               <div class="card-icon-wrapper">
                 <i class="material-icons">attach_money</i>
               </div>

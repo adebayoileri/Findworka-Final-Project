@@ -26,7 +26,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <h3 class="text-center">Dive right back In</h3>
+                {{-- <h3 class="text-center">Dive right back In</h3> --}}
               <div class="card card-signin my-5">
                 <div class="card-body">
                   <h5 class="card-title text-center">Login</h5>
@@ -62,8 +62,8 @@
     
                     <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
                     <hr class="my-4">
-                    <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-                    <button class="btn btn-lg btn-facebook btn-block text-uppercase" role="link" type="submit"><i class="fab fa-facebook-f mr-2"></i> <a href="/login/facebook" > Sign in with Facebook</a></button>
+                    {{-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button> --}}
+                    {{-- <button class="btn btn-lg btn-facebook btn-block text-uppercase" role="link" type="submit"><i class="fab fa-facebook-f mr-2"></i> <a href="/login/facebook" > Sign in with Facebook</a></button> --}}
                     @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}

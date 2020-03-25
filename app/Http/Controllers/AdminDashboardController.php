@@ -20,4 +20,18 @@ class AdminDashboardController extends Controller
         ];
         return view('admin.dashboard', $data);
     }
+
+    public function suspend($id){
+        $user = User::find($id);
+        $user->suspend = 1;
+        $user->save();
+        return redirect('/user')->with('success', 'User has been suspended');
+        }
+
+        public function unsuspend($id){
+            $user = User::find($id);
+            $user->suspend = 0;
+            $user->save();
+        return redirect('/user')->with('success', 'User has been suspended');
+            }
 }

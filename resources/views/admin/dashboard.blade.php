@@ -79,7 +79,8 @@
             </li>
             </div>
         <div class="panel-body">
-        <h3>Site Data</h3>
+          @include('inc.message')
+        {{-- <h3>Site Data</h3>
         <table class="table table-striped">
           <tr>
               <th>Name</th>
@@ -99,7 +100,7 @@
           </tr>
             @endforeach
       </table>
-        <br>
+        <br> --}}
             <h3>All Admin Endpoints</h3>
             <table class="table table-striped">
                 <tr>

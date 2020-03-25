@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 
 class AssignmentController extends Controller
 {
+  
+     
    public function index(){
     $tutorcourse = Auth::user()->enrolls()->first();
     $assignments = Assignment::where('course_id', $tutorcourse['course_id'])->get();
