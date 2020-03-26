@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class UserController extends Controller
@@ -10,11 +12,10 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
-        $this->middleware('auth');
     }
     
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.s
      *
      * @return \Illuminate\Http\Response
      */
@@ -49,12 +50,14 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-
+            'privilege_id' => 'required',
         ]);
             $users = new User;
             $users->name = $request->input('name');
             $users->email = $request->input('email');
-            $users->password = $request->input('password');
+            $users->password = Hash::make($request->input('password'));
+            $users->privilege_id = $request->input('privilege_id');
+            $users->suspend = $request->input('suspend_id');
             $users->save();
 
             return redirect('/user')->with('success','User created');
@@ -93,14 +96,17 @@ class UserController extends Controller
         $this->validate($request,[
              'name' => 'required',
              'email' => 'required',
-             'password' => 'required',
+            //  'password' => 'required',
+             'privilege_id' => 'required',
          ]);
  
          //Create new post
              $users = User::find($id);
              $users->name = $request->input('name');
              $users->email = $request->input('email');
-             $users->password = $request->input('password');
+             $users->privilege_id = $request->input('privilege_id');
+             $users->suspend = $request->input('suspend_id');
+            //  $users->password = Hash::make($request['password']);
  
              $users->save();
  

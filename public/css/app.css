@@ -4800,11 +4800,16 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  color: white;
 }
 
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
+  color: white;
+}
+a .nav-link{
+  color: white;
 }
 
 .navbar-nav .dropdown-menu {
@@ -7379,7 +7384,9 @@ button.bg-dark:focus {
 .bg-white {
   background-color: #fff !important;
 }
-
+.bg-darkblue{
+  background-color: darkblue;
+}
 .bg-transparent {
   background-color: transparent !important;
 }
@@ -11326,6 +11333,10 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -17393,7 +17404,9 @@ input[type=button].btn-block {
     -webkit-box-direction: normal;
             flex-direction: row;
   }
-
+  .white-nav{
+    color: white;
+  }
   .navbar-expand-sm .navbar-nav .dropdown-menu {
     position: absolute;
   }

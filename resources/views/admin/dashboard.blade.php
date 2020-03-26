@@ -25,28 +25,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Findworka Academy</div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="/">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Admin/Tutor Dashboard</span></a>
-      </li>
-
-    </ul>
+    @include('inc.adminnavbar')
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -89,7 +68,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Admin/Tutor Dashboard</h1>
           </div>
-
+          @include('inc.message')
           <!-- Content Row -->
           <div class="row">
             @if (session('status'))
@@ -100,6 +79,28 @@
             </li>
             </div>
         <div class="panel-body">
+          @include('inc.message')
+        {{-- <h3>Site Data</h3>
+        <table class="table table-striped">
+          <tr>
+              <th>Name</th>
+              <th>User Type</th>
+              <th>Course Enrolled</th>
+              <th>Payment Status</th>
+          </tr>
+            @foreach ($user as $person)
+            <tr>
+              <th> {{$person->name}}</th>
+              @if($person->privilge_id = 1)
+              <th> Student</th>
+              @else
+                  <th>Tutor</th>
+              @endif
+              <th>paid</th>
+          </tr>
+            @endforeach
+      </table>
+        <br> --}}
             <h3>All Admin Endpoints</h3>
             <table class="table table-striped">
                 <tr>
