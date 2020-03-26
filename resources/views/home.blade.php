@@ -19,7 +19,7 @@
                     @endforeach
                     @endforeach
                     <br>
-                <h5>{{ Auth::user()->id }}</h5>
+            
                     <h5>User's Progress</h5>
                     {{-- @else
                         <small> You have not enrolled for any course </small>

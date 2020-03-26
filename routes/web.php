@@ -13,6 +13,7 @@
 
 // use Illuminate\Routing\Route;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -41,7 +42,7 @@ Route::get('/{id}/unsuspend', 'AdminDashboardController@unsuspend');
 // Route::get('')
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
-
+Route::get('/purchase/history', 'HomeController@payment_history');
 //Resources Routes
 Route::resource('profile', 'ProfileController');
 Route::resource('tutor', 'TutorController')->middleware('verifyRole');
