@@ -80,7 +80,7 @@
             </div>
         <div class="panel-body">
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">Available users</div>
         
@@ -96,7 +96,7 @@
                                     <th scope="col">id</th>
                                     <th scope="col">Name</th>
                                     <th>User Type</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Actions</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -113,7 +113,10 @@
                                             <a href="/{{$user->id}}/suspend" role="button" class="btn btn-danger">Suspend</a>
                                           @else
                                           <a href="/{{$user->id}}/unsuspend" role="button" class="btn btn-danger">Unsuspend</a>
-                                          @endif</td>
+                                          @endif
+                                          <a href="/apply" class="btn btn-primary">Assign Course</a>
+                                         </td>
+                                          
                                         </tr>
                                     @endforeach
                                 </tbody>

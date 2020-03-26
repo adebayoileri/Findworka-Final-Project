@@ -14,7 +14,7 @@
                     <th> Assignment Title </th>
                    
                     <th> Download File</th>
-                    <th>Created At </th>
+           
                     <th>Actions</th>
                   </tr>
                 </thead>

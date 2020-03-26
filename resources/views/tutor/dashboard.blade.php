@@ -1,6 +1,7 @@
 @extends('inc.tutor')
 
 @section('content')
+@if(count($students) > 0)
 <div class="row">
     <div class="col-md-12 grid-margin">
         <div class="card">
@@ -56,4 +57,7 @@
         </div>
       </div>
 </div>
+@else 
+  <h5>This tutor has not been assigned a course</h5>
+@endif
 @endsection
