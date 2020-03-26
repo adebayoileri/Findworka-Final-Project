@@ -41,6 +41,7 @@ class PaymentController extends Controller
             $user = Auth::user();
 
             $payment = new payment;
+            $user_course = new user_courses;
             $payment->transaction_id = $paymentDetails['data']['id'];
             $payment->user_id = $user->id;
             $payment->amount_paid = $paymentDetails['data']['amount'];
@@ -51,11 +52,10 @@ class PaymentController extends Controller
             $course = course::find($paid_course);
 
             // $user->enrolls()->attach($course,['payment_id'=>$payment_id]);
-            $user_course = new user_courses;
+            // $user_course->payment_status_id = $paymentDetails['data']['metadata']['payment_status_id'];
             $user_course->course_id = $course->id;
             $user_course->user_id = auth()->user()->id;
-            $user_course->payment_id = $payment_id;
-            $user_course->payment_status_id = '1';
+            $user_course->payment_id = $payment_id; 
             $user_course->save();
             
             return redirect('/home')->with('success','Successfully enrolled');
@@ -115,6 +115,7 @@ class PaymentController extends Controller
         $payment_statuses = payment_status::all();
         $course_info = array('course_id' => $course->id, 'course_name'=>$course->name );
        
+        // foreach($payment_statuses as $payment_status)
         $course_paid_info = json_encode($course_info);
         $data = [
             'course'=> $course,

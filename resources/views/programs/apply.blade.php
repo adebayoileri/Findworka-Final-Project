@@ -36,7 +36,12 @@
         <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
         <input type="hidden" name="amount" value="{{$course->price}}00"> {{-- required in kobo --}}
           <input type="hidden" name="metadata" value="{{$course_paid_info}}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
-        <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            {{-- <select name="metadata">
+                @foreach ($payment_statuses as $payment_status)
+                <option value="{{ $payment_status->id }}">{{ $payment_status->name }}</option>
+                @endforeach
+            </select> --}}
+          <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
         <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
         <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
         {{-- <input type="hidden" name="quantity" value="{{$course->id}}"> --}}
@@ -50,9 +55,9 @@
         </div>
     </form>
 
-    {!! Form::open(['action'=>['PaymentController@storeusercourse', $course->id], 'method' => 'POST']) !!}
+    {{-- {!! Form::open(['action'=>['PaymentController@storeusercourse', $course->id], 'method' => 'POST']) !!}
     <div class="form-group">
         {{Form::hidden('_method', 'POST')}}
         {{Form::submit('Apply for course', ['class'=>'btn btn-primary'])}}
-    {!! Form::close() !!}
+    {!! Form::close() !!} --}}
 @endsection
