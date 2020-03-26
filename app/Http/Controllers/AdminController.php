@@ -51,7 +51,7 @@ class AdminController extends Controller
             'description' => 'required',
             'name' => 'required',
             'content' => 'required',
-            'program'=>'required'
+            'program_id'=>'required'
         ]);
 
         //Create new post
@@ -59,7 +59,8 @@ class AdminController extends Controller
             $course->description = $request->input('description');
             $course->name =   $request->input('name');
             $course->content = $request->input('content');
-            $course->program_id = $request->input('program');
+            $course->program_id = $request->input('program_id');
+            $course->price = $request->input('price');
             $course->save();
 
             return redirect('/admin')->with('success','course created');
@@ -104,8 +105,9 @@ class AdminController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'description' => 'required',
-            'program' =>'required',
-            'content'=>'required'
+            'program_id' =>'required',
+            'content'=>'required',
+            'price'=>'required',
         ]);
 
         //Create new post
@@ -113,7 +115,8 @@ class AdminController extends Controller
             $course->name = $request->input('name');
             $course->description = $request->input('description');
             $course->content = $request->input('content');
-            $course->program_id = $request->input('program');
+            $course->program_id = $request->input('program_id');
+            $course->price = $request->input('price');
             $course->save();
 
             return redirect('/admin')->with('success', 'Course successfully updated');

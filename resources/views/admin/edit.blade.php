@@ -14,9 +14,15 @@
     {{Form::label('content',  'Course Content')}}
     {{Form::textarea('content', $course->content, ['class' =>'form-control', 'placeholder' => "Course Content"])}}
 </div>
+
+<div class="form-group">
+    {{Form::label('price',  'Price')}}
+    {{Form::number('price', $course->price, ['class' =>'form-control', 'placeholder' => "Course Price"])}}
+</div>
+
 <div class="form-group">
 <label for="program">Pick a Program</label>
-<select class="form-control">
+<select name="program_id" class="form-control">
     @foreach ($programs as $program)
 <option name="program" value="{{$program->id}}">{{$program->name}}</option>
     @endforeach
