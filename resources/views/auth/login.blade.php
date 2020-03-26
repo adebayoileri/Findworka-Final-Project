@@ -61,14 +61,17 @@
                     </div>
     
                     <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                    <hr class="my-4">
+                    {{-- <hr class="my-4"> --}}
                     {{-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button> --}}
                     {{-- <button class="btn btn-lg btn-facebook btn-block text-uppercase" role="link" type="submit"><i class="fab fa-facebook-f mr-2"></i> <a href="/login/facebook" > Sign in with Facebook</a></button> --}}
+                    <div class="row">
                     @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                    <a class="col-md-6 btn btn-link" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
                 @endif
+                  <a href="/register" class="col-md-6 btn btn-link">Don't have an account</a>
+                </div>
                   </form>
                 </div>
               </div>
