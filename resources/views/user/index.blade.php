@@ -114,7 +114,7 @@
                                           @else
                                           <a href="/{{$user->id}}/unsuspend" role="button" class="btn btn-danger">Unsuspend</a>
                                           @endif
-                                          <a href="/apply" class="btn btn-primary">Assign Course</a>
+                                          <a href="/assigncourse" class="btn btn-primary">Assign Course</a>
                                          </td>
                                           
                                         </tr>

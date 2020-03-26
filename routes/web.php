@@ -38,6 +38,8 @@ Route::get('/uiux', 'Pagescontroller@uiux');
 Route::get('/mobileappdevelopment', 'Pagescontroller@mobile');
 Route::get('/{id}/suspend', 'AdminDashboardController@suspend');
 Route::get('/{id}/unsuspend', 'AdminDashboardController@unsuspend');
+Route::get('/assigncourse', 'AssignCourseController@assign');
+Route::post('/assigncourse', 'AssignCourseController@assigncourse');
 
 // Route::get('')
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
