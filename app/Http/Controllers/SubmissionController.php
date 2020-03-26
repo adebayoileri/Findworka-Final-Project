@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Assignment;
 use App\course;
 use App\Submission;
+use App\submission_user;
+use App\user_courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,15 +19,19 @@ class SubmissionController extends Controller
      */
     public function index()
     {
+        $user_id = Auth::user()->id;
         $usercourse = Auth::user()->enrolls()->first();
         $assignments = Assignment::where('course_id', $usercourse['course_id'])->get();
+        $user_submissions = submission_user::where('user_id', $user_id);
+        // dd($user_submissions);
 
         $data = [
             'assignments' => $assignments,
             'usercourse' => $usercourse,
+            'user_submissions' => $user_submissions,
         ];
 
-        // dd($recentassignments);
+        // // dd($recentassignments);
         return view('submissions.index', $data);
     }
 
@@ -84,6 +90,11 @@ class SubmissionController extends Controller
         // $progress = $course_id->pivot->progress;
         $submission->users()->attach($user, ['course_id'=>$course_id['id']]);
         // $user->enrolls()->updateExistingPivot($course_id['id'],['progress'=>$progress + 8.33]);
+        // $user_id = $user->id;
+        // $user_course = user_courses::where('user_id', $user_id);
+        // // $progress = $user_course->progress; 
+        // $user_course->progress = 8.33;
+        // $user_course->save();
         return redirect('/submissions')->with('success','Assignment submitted');
     }
 

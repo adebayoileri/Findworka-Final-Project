@@ -57,17 +57,17 @@
                         </tr>
                       </thead>
                       <tbody>
-                        {{-- @foreach ($assignments as $assignment)
+                      @foreach ($user_submissions as $submissions)
                         <tr>
-                        <td>{{ $assignment->id }}</td>
-                          <td class="text-left">{{$assignment->course_name}}</td>
+                        <td>{{ $submissions }}</td>
+                          {{-- <td class="text-left">{{$assignment->course_name}}</td>
                         <td>{{ $assignment->name }}</td>
                           <td><a class="mdc-button text-button--info" href="/assignments/{{$assignment->id}}/download">Download</a> </td>
                           <td><a class="mdc-button text-button--info" href="/submissions/create">Submit Assignment</a></td>
                           <td>{{ $assignment->created_at }}</td>
-                          <td>In 7 days</td>
+                          <td>In 7 days</td> --}}
                         </tr>
-                        @endforeach --}}
+                        @endforeach 
                       </tbody>
                     </table>
                   </div>

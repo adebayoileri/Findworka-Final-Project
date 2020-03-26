@@ -140,9 +140,4 @@ class PaymentController extends Controller
          }
     }
 
-    public function payment_history(){
-        $userPayment = Auth::user()->id;
-        $payments = Payment::where('user_id',$userPayment)->get();
-        return view('payment.history')->with('payments', $payments);
-    }
 }
