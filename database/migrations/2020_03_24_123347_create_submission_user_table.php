@@ -13,17 +13,17 @@ class CreateSubmissionUserTable extends Migration
      */
     public function up()
     {
-        // Schema::create('submission_user', function (Blueprint $table) {
+        Schema::create('submission_user', function (Blueprint $table) {
 
-        //  $table->increments('id');
-        //  $table->integer('user_id');
-        //  $table->integer('submission_id');
-        //  $table->integer('course_id')->unsigned();
-        //  $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
-        //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        //  $table->foreign('submission_id')->references('id')->on('submissions')->onDelete('cascade');
-        //  $table->timestamps();
-        // });
+         $table->increments('id');
+         $table->integer('user_id');
+         $table->integer('submission_id');
+         $table->integer('course_id')->unsigned();
+         $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
+         $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+         $table->foreign('submission_id')->references('id')->on('submissions')->onDelete('cascade');
+         $table->timestamps();
+        });
     }
 
     /**
@@ -33,6 +33,6 @@ class CreateSubmissionUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('submission_user');
+        Schema::dropIfExists('submission_users');
     }
 }

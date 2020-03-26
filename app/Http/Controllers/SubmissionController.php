@@ -17,21 +17,30 @@ class SubmissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function index()
     {
         $user_id = Auth::user()->id;
         $usercourse = Auth::user()->enrolls()->first();
-        $assignments = Assignment::where('course_id', $usercourse['course_id'])->get();
-        $user_submissions = submission_user::where('user_id', $user_id);
-        // dd($user_submissions);
+        $usercourse_id = $usercourse->course_id;
+        $assignments = Assignment::where('course_id', $usercourse_id)->get();
+        // $submissions = Submission::all();
+        // $user_submissions = $submissions->users()->get();
+        // Auth::user()->submissions()->first();
+        // dd($submissions);
 
         $data = [
             'assignments' => $assignments,
             'usercourse' => $usercourse,
-            'user_submissions' => $user_submissions,
+            // 'user_submissions' => $user_submissions,
         ];
 
-        // // dd($recentassignments);
+        // // // dd($recentassignments);
         return view('submissions.index', $data);
     }
 
@@ -52,7 +61,9 @@ class SubmissionController extends Controller
             $course = course::where('id', $course['course_id'])->get();
             $tasks = end($recent_task);
         }
-        //  dd($course);
+        // $user = Auth::user();
+        // $user_id = $user->id;
+        //  dd($user_id);
          
         return view('submissions.create')->with('tasks', $tasks)->with('course', $course);
     }
@@ -90,9 +101,9 @@ class SubmissionController extends Controller
         // $progress = $course_id->pivot->progress;
         $submission->users()->attach($user, ['course_id'=>$course_id['id']]);
         // $user->enrolls()->updateExistingPivot($course_id['id'],['progress'=>$progress + 8.33]);
-        // $user_id = $user->id;
-        // $user_course = user_courses::where('user_id', $user_id);
-        // // $progress = $user_course->progress; 
+        $user_id = $user->id;
+        // $user_course = user_courses::where('user_id', $user_id)->get();
+        // $progress = $user_course->progress; 
         // $user_course->progress = 8.33;
         // $user_course->save();
         return redirect('/submissions')->with('success','Assignment submitted');

@@ -45,15 +45,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(user_courses::class);
     }
     public function submissions(){
-        return $this->belongsToMany(Assignment::class)->withPivot('course_id');
+        return $this->hasMany(Submission::class);;
     }
     public function payments(){
         return $this->belongsToMany(payment::class);
     }
 
-    public function assignments(){
-        return $this->belongsToMany(Assignment::class)->withPivot('course_id');
-    }
+    // public function assignments(){
+    //     return $this->belongsToMany(Assignment::class)->withPivot('course_id');
+    // }
 
     public function privilege(){
         return $this->belongsTo(privilege::class);

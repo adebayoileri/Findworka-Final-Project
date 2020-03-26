@@ -15,15 +15,16 @@ class AssignmentController extends Controller
      
    public function index(){
     $tutorcourse = Auth::user()->enrolls()->first();
-    $assignments = Assignment::where('course_id', $tutorcourse['course_id'])->get();
-    $submissions = Submission::where('course_name', $tutorcourse['course_id'])->get();
+    $tutorcourse_id = $tutorcourse->course_id;
+    $assignments = Assignment::where('course_id', $tutorcourse_id)->get();
+    $submissions = Submission::where('course_name', $tutorcourse_id)->get();
     $data=[
         'assignments'=> $assignments,
         'tutorcourse' => $tutorcourse,
         'submissions' => $submissions
     ];
 
-    // dd($submissions);
+    // dd($tutorcourse_id);
 
     return view('assignments.index', $data);
    }
