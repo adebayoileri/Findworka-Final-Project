@@ -27,6 +27,9 @@ class SubmissionController extends Controller
     {
         $user_id = Auth::user()->id;
         $usercourse = Auth::user()->enrolls()->first();
+        if($usercourse == null){
+            return redirect('/home')->with('danger', 'You don\'nt have any assignments');
+        }
         $usercourse_id = $usercourse->course_id;
         $assignments = Assignment::where('course_id', $usercourse_id)->get();
         // $submissions = Submission::all();
@@ -40,7 +43,7 @@ class SubmissionController extends Controller
             // 'user_submissions' => $user_submissions,
         ];
 
-        // // // dd($recentassignments);
+        // dd($usercourse);
         return view('submissions.index', $data);
     }
 
