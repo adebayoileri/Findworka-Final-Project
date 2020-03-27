@@ -4,19 +4,19 @@
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="/about">About</a>
+              <a href="{{url('/about')}}">About</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="/contact">Contact</a>
+              <a href="{{url('/contact')}}">Contact</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="/terms">Terms of Use</a>
+              <a href="{{url('/terms')}}">Terms of Use</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="{{url('/privacy-policy')}}">Privacy Policy</a>
             </li>
           </ul>
           <p class="text-muted small mb-4 mb-lg-0">&copy; Findworka Academy 2020. All Rights Reserved.</p>

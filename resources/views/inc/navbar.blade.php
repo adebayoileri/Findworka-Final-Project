@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-darkblue shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-           <img src="https://academy.findworka.com/uploads/system/logo-dark.png" width="45%" alt="" srcset="">
+           <img src="{{asset('https://academy.findworka.com/uploads/system/logo-dark.png')}}" width="45%" alt="" srcset="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -44,8 +44,8 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item dropdown-menu-right">My Courses </a>
-                            <a  href="/submissions" class="dropdown-item dropdown-menu-right">Assignments</a>
-                            <a href="/home" class="dropdown-item dropdown-menu-right">View Profile</a>
+                            <a  href="{{url('/submissions')}}" class="dropdown-item dropdown-menu-right">Assignments</a>
+                            <a href="{{url('/home')}}" class="dropdown-item dropdown-menu-right">View Profile</a>
                             <a href="/profile/{{Auth::user()->id}}/edit" class="dropdown-item dropdown-menu-right">Edit Profile</a>
                             <a class="dropdown-item dropdown-menu-right">Purhase History</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"

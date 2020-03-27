@@ -12,8 +12,8 @@
   <title>Findworka-Admin Dashboard</title>
 
   <!-- Custom fonts for this template-->
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="{{asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')}}" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -115,7 +115,7 @@
                         <th></th>
                         <th>Access all available programs</th>
                         <th></th>
-                        <th><a href="/program" class="btn btn-primary">Program Url</a></th>
+                        <th><a href="{{url('/program')}}" class="btn btn-primary">Program Url</a></th>
                         <th></th>
                     </tr>
                     <tr>
@@ -123,7 +123,7 @@
                         <th></th>
                         <th>Access all available courses</th>
                         <th></th>
-                    <th><a href="/admin" class="btn btn-primary">Course Url</a></th>
+                    <th><a href="{{url('/admin')}}" class="btn btn-primary">Course Url</a></th>
                         <th></th>
                     </tr>
                     <tr>
@@ -131,7 +131,7 @@
                         <th></th>
                         <th>Access all available privileges</th>
                         <th></th>
-                        <th><a href="/privilege" class="btn btn-primary">Privilege Url</a></th>
+                        <th><a href="{{url('/privilege')}}" class="btn btn-primary">Privilege Url</a></th>
                         <th></th>
                     </tr>
                     <tr>
@@ -139,7 +139,7 @@
                         <th></th>
                         <th>Access all users payment_statuses</th>
                         <th></th>
-                        <th><a href="/payment_status" class="btn btn-primary">Users Payment Status Url</a></th>
+                        <th><a href="{{url('/payment_status')}}" class="btn btn-primary">Users Payment Status Url</a></th>
                         <th></th>
                     </tr>
             </table>
