@@ -17,15 +17,18 @@ return [
     */
 
     'default' => env('LOG_CHANNEL', 'stack'),
+
+    // 'default' => env('LOG_CHANNEL', 'stack'),
     'channels' => [
         'stack' => [
-         'driver' => 'stack',
-         'channels' => ['single'],
-            ],
-            'single' => [
-                'driver' => 'errorlog',
-                'level' => 'debug',
-            ],
+            'driver' => 'stack',
+            'channels' => ['single'],
+        ],
+        'single' => [
+            'driver' => 'errorlog',
+            'level' => 'debug',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -42,12 +45,12 @@ return [
     |
     */
 
-    'channels' => [
-        'stack' => [
-            'driver' => 'stack',
-            'channels' => ['daily'],
-            'ignore_exceptions' => false,
-        ],
+    // 'channels' => [
+    //     'stack' => [
+    //         'driver' => 'stack',
+    //         'channels' => ['daily'],
+    //         'ignore_exceptions' => false,
+    //     ],
 
         'single' => [
             'driver' => 'single',
@@ -98,6 +101,5 @@ return [
             'driver' => 'errorlog',
             'level' => 'debug',
         ],
-    ],
+    ];
 
-];
