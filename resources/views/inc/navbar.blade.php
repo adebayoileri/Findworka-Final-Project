@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-darkblue shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-           <img src="{{asset('https://academy.findworka.com/uploads/system/logo-dark.png')}}" width="45%" alt="" srcset="">
+           <img src="https://academy.findworka.com/uploads/system/logo-dark.png" width="45%" alt="" srcset="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
