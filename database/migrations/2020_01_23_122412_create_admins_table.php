@@ -17,8 +17,6 @@ class CreateAdminsTable extends Migration
             $table->increments('id');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('privilege_id')->unsigned()->default(2);
-            $table->foreign('privilege_id')->references('id')->on('privileges')->onDelete('cascade')->nullable();
             $table->rememberToken();
             $table->timestamps();
     });
