@@ -13,14 +13,14 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
-        // Schema::create('courses', function (Blueprint $table) {
-        //     $table->bigIncrements('id');
-        //     $table->string('name');
-        //     $table->text('description');
-        //     $table->string('content');
-        //     $table->integer('program_id')->references('id')->on('programs')->onDelete('cascade');
-        //     $table->timestamps();
-        // });
+        Schema::create('courses', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('content');
+            $table->integer('program_id')->references('id')->on('programs')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**

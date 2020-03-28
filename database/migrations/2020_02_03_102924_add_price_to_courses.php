@@ -11,12 +11,12 @@ class AddPriceToCourses extends Migration
      *
      * @return void
      */
-    // public function up()
-    // {
-    //     Schema::table('courses', function (Blueprint $table) {
-    //         $table->integer('price');
-    //     });
-    // }
+    public function up()
+    {
+        Schema::table('courses', function (Blueprint $table) {
+            $table->integer('price');
+        });
+    }
 
     /**
      * Reverse the migrations.

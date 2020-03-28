@@ -11,13 +11,13 @@ class CreateTasksTable extends Migration
      *
      * @return void
      */
-    // public function up()
-    // {
-    //     Schema::create('tasks', function (Blueprint $table) {
-    //         $table->bigIncrements('id');
-    //         $table->timestamps();
-    //     });
-    // }
+    public function up()
+    {
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
