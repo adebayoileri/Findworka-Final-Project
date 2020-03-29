@@ -11,13 +11,13 @@ class AddCourseIdToAssignments extends Migration
      *
      * @return void
      */
-    // public function up()
-    // {
-    //     Schema::table('assignments', function (Blueprint $table) {
-    //         $table->bigIncrements('course_id')->unsigned();
-    //         $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
-    //     });
-    // }
+    public function up()
+    {
+        Schema::table('assignments', function (Blueprint $table) {
+            $table->bigIncrements('course_id')->unsigned();
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
+        });
+    }
 
     /**
      * Reverse the migrations.

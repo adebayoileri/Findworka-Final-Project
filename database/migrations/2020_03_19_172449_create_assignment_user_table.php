@@ -11,19 +11,19 @@ class CreateAssignmentUserTable extends Migration
      *
      * @return void
      */
-    // public function up()
-    // {
-    //     Schema::create('assignment_user', function (Blueprint $table) {
-    //         $table->increments('id');
-    //         $table->integer('user_id');
-    //         $table->integer('assignment_id');
-    //         $table->integer('course_id')->unsigned();
-    //         $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
-    //         $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-    //         $table->foreign('assignment_id')->references('id')->on('assignments')->onDelete('cascade');
-    //         $table->timestamps();
-    //     });
-    // }
+    public function up()
+    {
+        Schema::create('assignment_user', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('assignment_id');
+            $table->integer('course_id')->unsigned();
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('assignment_id')->references('id')->on('assignments')->onDelete('cascade');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.

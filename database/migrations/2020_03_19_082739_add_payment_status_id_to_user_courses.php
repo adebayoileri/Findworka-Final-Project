@@ -11,13 +11,13 @@ class AddPaymentStatusIdToUserCourses extends Migration
      *
      * @return void
      */
-    // public function up()
-    // {
-    //     Schema::table('user_courses', function (Blueprint $table) {
-    //         $table->integer('payment_status_id')->unsigned()->default(3);
-    //         $table->foreign('payment_status_id')->references('id')->on('payment_statuses')->onDelete('cascade');
-    //     });
-    // }
+    public function up()
+    {
+        Schema::table('user_courses', function (Blueprint $table) {
+            $table->integer('payment_status_id')->unsigned()->default(3);
+            $table->foreign('payment_status_id')->references('id')->on('payment_statuses')->onDelete('cascade');
+        });
+    }
 
     /**
      * Reverse the migrations.
