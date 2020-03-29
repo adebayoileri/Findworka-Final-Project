@@ -11,12 +11,12 @@ class AddProfileImageToUsers extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('photo')->default('noimage.jpg');
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::table('users', function (Blueprint $table) {
+    //         $table->string('photo')->default('noimage.jpg');
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

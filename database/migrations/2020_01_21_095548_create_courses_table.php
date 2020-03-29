@@ -11,17 +11,17 @@ class CreateCoursesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->text('description');
-            $table->string('content');
-            $table->integer('program_id')->references('id')->on('programs')->onDelete('cascade');
-            $table->timestamps();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('courses', function (Blueprint $table) {
+    //         $table->bigIncrements('id');
+    //         $table->string('name');
+    //         $table->text('description');
+    //         $table->string('content');
+    //         $table->integer('program_id')->references('id')->on('programs')->onDelete('cascade');
+    //         $table->timestamps();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

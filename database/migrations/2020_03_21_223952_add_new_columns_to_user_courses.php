@@ -11,15 +11,15 @@ class AddNewColumnsToUserCourses extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('user_courses', function (Blueprint $table) {
-            $table->integer('progress')->unsigned()->default(0);
-            $table->integer('payment_id')->unsigned()->nullable();
-            $table->foreign('payment_id')->references('id')->on('payments')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('payment_status_id')->references('id')->on('payment_statuses')->onDelete('cascade')->onUpdate('cascade');
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::table('user_courses', function (Blueprint $table) {
+    //         $table->integer('progress')->unsigned()->default(0);
+    //         $table->integer('payment_id')->unsigned()->nullable();
+    //         $table->foreign('payment_id')->references('id')->on('payments')->onDelete('cascade')->onUpdate('cascade');
+    //         $table->foreign('payment_status_id')->references('id')->on('payment_statuses')->onDelete('cascade')->onUpdate('cascade');
+    //     });
+    // }
 
     /**
      * Reverse the migrations.
